@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var inProgress = false
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+                Text("Hello, world!")
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(inProgress ? "Start": "Stop") {
+                        inProgress.toggle()
+                        print("In progress: \(inProgress)")
+                    }
+                }
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
