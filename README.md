@@ -7,10 +7,12 @@
 
 ## TODO
 - [x] define git repository and initial README, .gitignore etc.
-- [x] make initial project setup with SwiftUI interface and UIKit AppDelegate 
-- [ ] create basic UI start / stop button with SwiftUI
-- [ ] add location usage description and enable location updates in the background on Signing & Capabilities
-- [ ] add feature to fetch user startign location at the beginning of the journey
+- [x] make initial project setup with SwiftUI interface and UIKit AppDelegate
+- [x] add scene delegate
+- [x] create basic UI start / stop button with SwiftUI
+- [x] refactor to MVVM (perhaps temporarily)
+- [x] add location usage description and enable location updates in the background on Signing & Capabilities
+- [x] add feature to fetch user starting location at the beginning of the journey
 - [ ] define UserLocation codable model to keep coordinate and identifier, add helper method to create CLCircularRegion from model
 - [ ] add feature to fetch image from Flickr that tied to the location using UserLocation model
 - [ ] define initial monitoring region for user starting location and start monotoring when user exit region, create 'startMonitoring' method
