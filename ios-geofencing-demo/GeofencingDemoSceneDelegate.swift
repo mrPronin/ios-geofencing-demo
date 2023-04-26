@@ -9,7 +9,7 @@ import UIKit
 
 class GeofencingDemoSceneDelegate: NSObject, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        print("scene(:willConnectTo)")
+//        print("scene(:willConnectTo)")
     }
     func sceneWillEnterForeground(_ scene: UIScene) {
         // ...

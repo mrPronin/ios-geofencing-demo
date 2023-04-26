@@ -83,8 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */,
-				09AB9C0F29F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift */,
 				09AB9C0D29F801C4008A7BC3 /* GeofencingDemoAppDelegate.swift */,
+				09AB9C0F29F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift */,
 				09AB9C1529F949E4008A7BC3 /* Namespace.swift */,
 				09AB9C1229F94988008A7BC3 /* ViewModel */,
 				09AB9C1129F94910008A7BC3 /* View */,

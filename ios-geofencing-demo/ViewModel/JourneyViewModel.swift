@@ -34,9 +34,30 @@ public extension Journey {
         
         // MARK: - Private
         func enable() {
+            locationManager.requestLocation()
+//            locationManager.startUpdatingLocation()
         }
         
         func disable() {
+            // TODO: disable location tracking
+        }
+        
+        // MARK: - CLLocationManagerDelegate
+        public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+            // TODO: implement alert if != authorizedAlways
+        }
+        
+        public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let location = locations.first else { return }
+            print("coordinate: \(location.coordinate)")
+        }
+        
+        public func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+            // TODO: implement error handling
+        }
+        
+        public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+            // TODO: implement error handling
         }
         
         let locationManager: CLLocationManager
