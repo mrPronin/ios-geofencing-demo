@@ -1,5 +1,5 @@
 //
-//  JourneyView.swift
+//  JourneyListView.swift
 //  ios-geofencing-demo
 //
 //  Created by Pronin Oleksandr on 25.04.23.

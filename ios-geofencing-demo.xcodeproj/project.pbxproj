@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		09AB9BE429F8005A008A7BC3 /* GeofencingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */; };
-		09AB9BE629F8005A008A7BC3 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE529F8005A008A7BC3 /* JourneyView.swift */; };
+		09AB9BE629F8005A008A7BC3 /* JourneyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */; };
 		09AB9BE829F8005B008A7BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB9BE729F8005B008A7BC3 /* Assets.xcassets */; };
 		09AB9BEB29F8005B008A7BC3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB9BEA29F8005B008A7BC3 /* Preview Assets.xcassets */; };
 		09AB9BF529F8005B008A7BC3 /* ios_geofencing_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BF429F8005B008A7BC3 /* ios_geofencing_demoTests.swift */; };
 		09AB9C0E29F801C4008A7BC3 /* GeofencingDemoAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9C0D29F801C4008A7BC3 /* GeofencingDemoAppDelegate.swift */; };
 		09AB9C1029F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9C0F29F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift */; };
 		09AB9C1429F949A9008A7BC3 /* JourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9C1329F949A9008A7BC3 /* JourneyViewModel.swift */; };
-		09AB9C1629F949E4008A7BC3 /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9C1529F949E4008A7BC3 /* Namespace.swift */; };
+		09AB9C1629F949E4008A7BC3 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9C1529F949E4008A7BC3 /* Journey.swift */; };
+		09AB9C1B29F95EA6008A7BC3 /* JourneyLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9C1A29F95EA6008A7BC3 /* JourneyLocation.swift */; };
+		09AB9C1D29F961BD008A7BC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9C1C29F961BD008A7BC3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +33,7 @@
 /* Begin PBXFileReference section */
 		09AB9BE029F8005A008A7BC3 /* ios-geofencing-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-geofencing-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoApp.swift; sourceTree = "<group>"; };
-		09AB9BE529F8005A008A7BC3 /* JourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
+		09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyListView.swift; sourceTree = "<group>"; };
 		09AB9BE729F8005B008A7BC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09AB9BEA29F8005B008A7BC3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09AB9BF029F8005B008A7BC3 /* ios-geofencing-demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-geofencing-demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,8 +41,10 @@
 		09AB9C0D29F801C4008A7BC3 /* GeofencingDemoAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoAppDelegate.swift; sourceTree = "<group>"; };
 		09AB9C0F29F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoSceneDelegate.swift; sourceTree = "<group>"; };
 		09AB9C1329F949A9008A7BC3 /* JourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyViewModel.swift; sourceTree = "<group>"; };
-		09AB9C1529F949E4008A7BC3 /* Namespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
+		09AB9C1529F949E4008A7BC3 /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		09AB9C1729F94D97008A7BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		09AB9C1A29F95EA6008A7BC3 /* JourneyLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyLocation.swift; sourceTree = "<group>"; };
+		09AB9C1C29F961BD008A7BC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +89,8 @@
 				09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */,
 				09AB9C0D29F801C4008A7BC3 /* GeofencingDemoAppDelegate.swift */,
 				09AB9C0F29F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift */,
-				09AB9C1529F949E4008A7BC3 /* Namespace.swift */,
-				09AB9C1229F94988008A7BC3 /* ViewModel */,
-				09AB9C1129F94910008A7BC3 /* View */,
+				09AB9C1C29F961BD008A7BC3 /* Constants.swift */,
+				09AB9C1829F95E41008A7BC3 /* Journey */,
 				09AB9C1729F94D97008A7BC3 /* Info.plist */,
 				09AB9BE729F8005B008A7BC3 /* Assets.xcassets */,
 				09AB9BE929F8005B008A7BC3 /* Preview Content */,
@@ -114,7 +117,7 @@
 		09AB9C1129F94910008A7BC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				09AB9BE529F8005A008A7BC3 /* JourneyView.swift */,
+				09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,6 +128,25 @@
 				09AB9C1329F949A9008A7BC3 /* JourneyViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		09AB9C1829F95E41008A7BC3 /* Journey */ = {
+			isa = PBXGroup;
+			children = (
+				09AB9C1529F949E4008A7BC3 /* Journey.swift */,
+				09AB9C1929F95E7B008A7BC3 /* Model */,
+				09AB9C1229F94988008A7BC3 /* ViewModel */,
+				09AB9C1129F94910008A7BC3 /* View */,
+			);
+			path = Journey;
+			sourceTree = "<group>";
+		};
+		09AB9C1929F95E7B008A7BC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09AB9C1A29F95EA6008A7BC3 /* JourneyLocation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,12 +249,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09AB9BE629F8005A008A7BC3 /* JourneyView.swift in Sources */,
-				09AB9C1629F949E4008A7BC3 /* Namespace.swift in Sources */,
+				09AB9C1B29F95EA6008A7BC3 /* JourneyLocation.swift in Sources */,
+				09AB9BE629F8005A008A7BC3 /* JourneyListView.swift in Sources */,
+				09AB9C1629F949E4008A7BC3 /* Journey.swift in Sources */,
 				09AB9C1029F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift in Sources */,
 				09AB9C1429F949A9008A7BC3 /* JourneyViewModel.swift in Sources */,
 				09AB9C0E29F801C4008A7BC3 /* GeofencingDemoAppDelegate.swift in Sources */,
 				09AB9BE429F8005A008A7BC3 /* GeofencingDemoApp.swift in Sources */,
+				09AB9C1D29F961BD008A7BC3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
