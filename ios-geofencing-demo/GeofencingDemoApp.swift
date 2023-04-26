@@ -13,7 +13,7 @@ struct GeofencingDemoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Journey.ListView()
         }
     }
 }
