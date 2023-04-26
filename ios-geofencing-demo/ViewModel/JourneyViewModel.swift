@@ -6,27 +6,40 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 public extension Journey {
-    class ViewModel: ObservableObject {
+    class ViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         // MARK: - Public
         @Published private(set) public var isLocationTrackingEnabled = false
         public func startStopLocationTracking() {
             isLocationTrackingEnabled.toggle()
             if isLocationTrackingEnabled {
-              enable()
+                enable()
             } else {
-              disable()
+                disable()
             }
         }
         
+        // MARK: - Init
+        override init() {
+            locationManager = CLLocationManager()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.allowsBackgroundLocationUpdates = true
+            
+            super.init()
+            locationManager.delegate = self
+        }
+        
         // MARK: - Private
-
         func enable() {
         }
-
+        
         func disable() {
         }
-
+        
+        let locationManager: CLLocationManager
+        
     }
 }

@@ -40,6 +40,7 @@
 		09AB9C0F29F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoSceneDelegate.swift; sourceTree = "<group>"; };
 		09AB9C1329F949A9008A7BC3 /* JourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyViewModel.swift; sourceTree = "<group>"; };
 		09AB9C1529F949E4008A7BC3 /* Namespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
+		09AB9C1729F94D97008A7BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +88,7 @@
 				09AB9C1529F949E4008A7BC3 /* Namespace.swift */,
 				09AB9C1229F94988008A7BC3 /* ViewModel */,
 				09AB9C1129F94910008A7BC3 /* View */,
+				09AB9C1729F94D97008A7BC3 /* Info.plist */,
 				09AB9BE729F8005B008A7BC3 /* Assets.xcassets */,
 				09AB9BE929F8005B008A7BC3 /* Preview Content */,
 			);
@@ -378,6 +380,9 @@
 				DEVELOPMENT_TEAM = HUV2SZ24Y2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-geofencing-demo/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app requires constant access to your phone's location to visualize your journey";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app requires constant access to your phone's location to visualize your journey";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -407,6 +412,9 @@
 				DEVELOPMENT_TEAM = HUV2SZ24Y2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-geofencing-demo/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app requires constant access to your phone's location to visualize your journey";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The app requires constant access to your phone's location to visualize your journey";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
