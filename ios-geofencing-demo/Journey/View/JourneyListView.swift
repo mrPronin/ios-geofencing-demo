@@ -16,7 +16,7 @@ public extension Journey {
                     Image(systemName: "globe")
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
-                    Text("Hello, world!")
+                    Text("network_error_invalid_url".localized)
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {

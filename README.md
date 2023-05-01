@@ -13,8 +13,11 @@
 - [x] refactor to MVVM (perhaps temporarily)
 - [x] add location usage description and enable location updates in the background on Signing & Capabilities
 - [x] add feature to fetch user starting location at the beginning of the journey
-- [ ] define UserLocation codable model to keep coordinate and identifier, add helper method to create CLCircularRegion from model
-- [ ] add feature to fetch image from Flickr that tied to the location using UserLocation model
+- [x] define codable model to keep coordinate and identifier, add helper method to create CLCircularRegion from model
+- [x] integrate network service, implement mocket localization service
+- [x] implement DI with property wrappers, implement localization service and inject it to network service
+- [ ] localize app with localization service, error handling in particular
+- [ ] add feature to fetch image from Flickr by location
 - [ ] define initial monitoring region for user starting location and start monotoring when user exit region, create 'startMonitoring' method
 - [ ] create 'stopMonitoring' method to remove monitoring region
 - [ ] add service to store locations list, fetch by id

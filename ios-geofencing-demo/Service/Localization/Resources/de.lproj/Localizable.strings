@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  ios-geofencing-demo
+
+  Created by Pronin Oleksandr on 01.05.23.
+  
+*/
+"network_error_invalid_url" = "Netzwerkfehler. Ungültige URL.";
+"network_error_bad_request" = "Netzwerkfehler. Ungültige Anfrage.";
+"network_error_unauthorized" = "Netzwerkfehler. Nicht autorisiert.";
+"network_error_forbidden" = "Netzwerkfehler. Verboten.";
+"network_error_link_not_found" = "Netzwerkfehler. Link nicht gefunden.";
+"network_error_with_code" = "Netzwerkfehler %@";
+"network_error_server_exception" = "Netzwerkfehler. Serverfehler.";
+"network_error_decoding_failed" = "Netzwerkfehler. Decodierung fehlgeschlagen.";
+"network_error_url_session_failed_with_error" = "Netzwerkfehler. URL-Sitzung fehlgeschlagen! %@";
+"network_error_unknown" = "Netzwerkfehler. Unbekannt.";
+"network_error_other" = "Netzwerkfehler. Andere: %@";
