@@ -16,8 +16,12 @@
 - [x] define codable model to keep coordinate and identifier, add helper method to create CLCircularRegion from model
 - [x] integrate network service, implement mocket localization service
 - [x] implement DI with property wrappers, implement localization service and inject it to network service
-- [ ] localize app with localization service, error handling in particular
-- [ ] add feature to fetch image from Flickr by location
+- [x] localize app with localization service, error handling in particular
+- [x] implement FlickrService to fetch image url from Flickr by location (latitude, longitude)
+    - [x] define models - Image and PagedPhotosResponse
+    - [x] define flickr photos search endpoint
+    - [x] define flickr service protocol
+    - [x] implement flickr service and inject it into JourneyViewModel
 - [ ] define initial monitoring region for user starting location and start monotoring when user exit region, create 'startMonitoring' method
 - [ ] create 'stopMonitoring' method to remove monitoring region
 - [ ] add service to store locations list, fetch by id
