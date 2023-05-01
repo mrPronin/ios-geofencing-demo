@@ -7,14 +7,12 @@
 
 import Foundation
 
-// TODO: replace mocked implementation
 public extension String {
     var localized: String {
-        self
-        //NSLocalizedString(self, bundle: .module, comment: "")
+        InjectedValues[\.localizationProvider].localizedString(with: self)
     }
+    
     func localized(with argument: String) -> String {
-        String(format: self, "\(argument)")
-        //return String.localizedStringWithFormat(NSLocalizedString(self, bundle: .module, comment: ""), "\(argument)")
+        return String.localizedStringWithFormat(InjectedValues[\.localizationProvider].localizedString(with: self), "\(argument)")
     }
 }
