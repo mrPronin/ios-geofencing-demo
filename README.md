@@ -1,4 +1,4 @@
-# ios-geofencing-demo
+# iOS geofencing demo
 ## User stories
 - **User story 1.** As a user of the application, I want to be able to start a journey by clicking the "Start" button, and then end the journey by clicking the "Stop" button. It should be one button, but the title should change depending on the mode.
 - **User story 2.** As a user of the application, I have to receive a permission request to use location.

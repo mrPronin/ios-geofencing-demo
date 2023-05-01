@@ -1,0 +1,39 @@
+{
+  "photos": {
+    "page": 1,
+    "pages": 4,
+    "perpage": 2,
+    "total": 8,
+    "photo": [
+      {
+        "id": "15008700875",
+        "owner": "55898913@N04",
+        "secret": "0e262eee71",
+        "server": "3901",
+        "farm": 4,
+        "title": "Tempelhof Field, Berlin",
+        "ispublic": 1,
+        "isfriend": 0,
+        "isfamily": 0,
+        "url_c": "https://live.staticflickr.com/3901/15008700875_0e262eee71_c.jpg",
+        "height_c": 451,
+        "width_c": 800
+      },
+      {
+        "id": "14822169527",
+        "owner": "55898913@N04",
+        "secret": "40f1ae3925",
+        "server": "5575",
+        "farm": 6,
+        "title": "Tempelhof Field, Berlin",
+        "ispublic": 1,
+        "isfriend": 0,
+        "isfamily": 0,
+        "url_c": "https://live.staticflickr.com/5575/14822169527_40f1ae3925_c.jpg",
+        "height_c": 451,
+        "width_c": 800
+      }
+    ]
+  },
+  "stat": "ok"
+}
