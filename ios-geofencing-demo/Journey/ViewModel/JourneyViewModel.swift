@@ -7,9 +7,10 @@
 
 import SwiftUI
 import CoreLocation
+import Combine
 
 public extension Journey {
-    class ViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+    class ViewModel: NSObject, ObservableObject {
         // MARK: - Public
         @Published private(set) public var isLocationTrackingEnabled = false
         public func startStopLocationTracking() {
@@ -42,25 +43,36 @@ public extension Journey {
             // TODO: disable location tracking
         }
         
-        // MARK: - CLLocationManagerDelegate
-        public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-            // TODO: implement alert if != authorizedAlways
-        }
+        private let locationManager: CLLocationManager
+        @Injected(\.flickrService) private var flickrService: FlickrService
         
-        public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            guard let location = locations.first else { return }
-            print("coordinate: \(location.coordinate)")
-        }
-        
-        public func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
-            // TODO: implement error handling
-        }
-        
-        public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            // TODO: implement error handling
-        }
-        
-        let locationManager: CLLocationManager
-        
+        // debug
+        var subscriptions = Set<AnyCancellable>()
+        // debug
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+extension Journey.ViewModel: CLLocationManagerDelegate {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        print("coordinate: \(location.coordinate)")
+        flickrService.flickrPhotosSearch(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            .sink(receiveCompletion: { _ in }, receiveValue: { model in
+                print(model)
+            })
+            .store(in: &subscriptions)
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        // TODO: implement error handling
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        // TODO: implement error handling
+    }
+    
+    public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        // TODO: implement alert if != authorizedAlways
     }
 }
