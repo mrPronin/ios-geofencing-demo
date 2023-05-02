@@ -20,11 +20,12 @@ extension Endpoint where Kind == EndpointKinds.Public, Response == Flickr.PagedP
             "geo_context" : "2",
             "radius" : "2",
             "extras" : "url_c",
-            "per_page" : "1"
+            "per_page" : "1",
+            "nojsoncallback" : "1"
         ]
         let queryItems = parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
         return Endpoint(
-            path: "",
+            path: "services/rest",
             queryItems: queryItems
         )
     }

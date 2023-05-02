@@ -9,8 +9,8 @@ import Foundation
 
 public enum Constants {
     public static let trackingRadius = 100
-    public static let baseURL = "https://www.flickr.com/services/rest/"
+    public static let baseURL = "flickr.com"
     // TODO: define test instance url for testing env
-    public static let baseURLTest = "https://www.flickr.com/services/rest/"
+    public static let baseURLTest = "flickr.com"
     public static let flickrAPIKey = "ce33a87084ba80fef3054149f000f641"
 }

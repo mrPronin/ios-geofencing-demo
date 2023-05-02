@@ -57,9 +57,9 @@ extension Journey.ViewModel: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         print("coordinate: \(location.coordinate)")
-        flickrService.flickrPhotosSearch(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            .sink(receiveCompletion: { _ in }, receiveValue: { model in
-                print(model)
+        flickrService.flickrPhotosSearch(latitude: 52.47340827974928, longitude: 13.3443475205514)
+            .sink(receiveCompletion: { print ("completion: \($0)") }, receiveValue: { model in
+                print(model.photos.first)
             })
             .store(in: &subscriptions)
     }
