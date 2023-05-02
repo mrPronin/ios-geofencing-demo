@@ -22,6 +22,7 @@
     - [x] define flickr photos search endpoint
     - [x] define flickr service protocol
     - [x] implement flickr service and inject it into JourneyViewModel
+    - [x] fix issues with base url and flickr response
 - [ ] define initial monitoring region for user starting location and start monotoring when user exit region, create 'startMonitoring' method
 - [ ] create 'stopMonitoring' method to remove monitoring region
 - [ ] add service to store locations list, fetch by id
