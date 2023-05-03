@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		099255822A025964001B5F05 /* JourneyStorage+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099255812A025964001B5F05 /* JourneyStorage+Protocol.swift */; };
+		099255842A025AAB001B5F05 /* JourneyStorage+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099255832A025AAB001B5F05 /* JourneyStorage+Service.swift */; };
+		099255872A025DFA001B5F05 /* JourneyStorage+Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099255862A025DFA001B5F05 /* JourneyStorage+Defines.swift */; };
+		099255892A0260A7001B5F05 /* JourneyStorage+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099255882A0260A7001B5F05 /* JourneyStorage+DI.swift */; };
 		09AB9BE429F8005A008A7BC3 /* GeofencingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */; };
 		09AB9BE629F8005A008A7BC3 /* JourneyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */; };
 		09AB9BE829F8005B008A7BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB9BE729F8005B008A7BC3 /* Assets.xcassets */; };
@@ -56,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		099255812A025964001B5F05 /* JourneyStorage+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JourneyStorage+Protocol.swift"; sourceTree = "<group>"; };
+		099255832A025AAB001B5F05 /* JourneyStorage+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JourneyStorage+Service.swift"; sourceTree = "<group>"; };
+		099255862A025DFA001B5F05 /* JourneyStorage+Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JourneyStorage+Defines.swift"; sourceTree = "<group>"; };
+		099255882A0260A7001B5F05 /* JourneyStorage+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JourneyStorage+DI.swift"; sourceTree = "<group>"; };
 		09AB9BE029F8005A008A7BC3 /* ios-geofencing-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-geofencing-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoApp.swift; sourceTree = "<group>"; };
 		09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyListView.swift; sourceTree = "<group>"; };
@@ -116,6 +124,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		099255852A025AC5001B5F05 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				099255812A025964001B5F05 /* JourneyStorage+Protocol.swift */,
+				099255862A025DFA001B5F05 /* JourneyStorage+Defines.swift */,
+				099255832A025AAB001B5F05 /* JourneyStorage+Service.swift */,
+				099255882A0260A7001B5F05 /* JourneyStorage+DI.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		09AB9BD729F8005A008A7BC3 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				09AB9C1529F949E4008A7BC3 /* Journey.swift */,
+				099255852A025AC5001B5F05 /* Service */,
 				09AB9C1929F95E7B008A7BC3 /* Model */,
 				09AB9C1229F94988008A7BC3 /* ViewModel */,
 				09AB9C1129F94910008A7BC3 /* View */,
@@ -401,6 +421,7 @@
 				09C6C14429FFEA2C00DA6436 /* Localization+localized.swift in Sources */,
 				09AB9C1B29F95EA6008A7BC3 /* JourneyLocation.swift in Sources */,
 				09C6C12F29FFE34100DA6436 /* Endpoint.swift in Sources */,
+				099255872A025DFA001B5F05 /* JourneyStorage+Defines.swift in Sources */,
 				09AB9BE629F8005A008A7BC3 /* JourneyListView.swift in Sources */,
 				09AB9C1629F949E4008A7BC3 /* Journey.swift in Sources */,
 				09C6C15D2A0061C000DA6436 /* Flickr+Image.swift in Sources */,
@@ -413,11 +434,14 @@
 				09C6C13129FFE37300DA6436 /* EndpointKind.swift in Sources */,
 				09C6C15B2A00616500DA6436 /* Endpoint+flickrPhotosSearch.swift in Sources */,
 				09C6C1632A006CF500DA6436 /* Flickr.swift in Sources */,
+				099255892A0260A7001B5F05 /* JourneyStorage+DI.swift in Sources */,
 				09C6C14229FFE9BD00DA6436 /* Localization.swift in Sources */,
 				09C6C1652A006D1500DA6436 /* Flickr+Protocol.swift in Sources */,
 				09AB9C1D29F961BD008A7BC3 /* Constants.swift in Sources */,
 				09C6C15F2A0065EE00DA6436 /* Flickr+PagedPhotosResponse.swift in Sources */,
 				09C6C15129FFF3CE00DA6436 /* Injected.swift in Sources */,
+				099255842A025AAB001B5F05 /* JourneyStorage+Service.swift in Sources */,
+				099255822A025964001B5F05 /* JourneyStorage+Protocol.swift in Sources */,
 				09C6C13329FFE3BE00DA6436 /* AccessToken.swift in Sources */,
 				09C6C14F29FFF38D00DA6436 /* InjectedValues.swift in Sources */,
 				09C6C1692A00789900DA6436 /* Flickr+DI.swift in Sources */,

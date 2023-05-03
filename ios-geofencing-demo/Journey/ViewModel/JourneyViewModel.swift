@@ -45,6 +45,7 @@ public extension Journey {
         
         private let locationManager: CLLocationManager
         @Injected(\.flickrService) private var flickrService: FlickrService
+        @Injected(\.journeyStorageProvider) private var journeyStorageService: JourneyStorageService
         
         // debug
         var subscriptions = Set<AnyCancellable>()
@@ -57,7 +58,7 @@ extension Journey.ViewModel: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         print("coordinate: \(location.coordinate)")
-        flickrService.flickrPhotosSearch(latitude: 52.47340827974928, longitude: 13.3443475205514)
+        flickrService.flickrPhotosSearch(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             .sink(receiveCompletion: { print ("completion: \($0)") }, receiveValue: { model in
                 print(model.photos.first)
             })
