@@ -33,7 +33,7 @@
 - [x] define initial monitoring region for user starting location and start monotoring when user exit region
 - [x] create 'stopMonitoring' method to remove monitoring region
 - [x] implement alert if authorizationStatus != authorizedAlways
-- [ ] handle location errors
+- [x] refactor: extract locationManager to separate service - LocationService, handle location errors
 - [ ] handle location event 'didExitRegion', remove current monitoring region, save / get current location, store it, define new monitoring region
 - [ ] create UI for images list
 - [ ] fetch images for location list
