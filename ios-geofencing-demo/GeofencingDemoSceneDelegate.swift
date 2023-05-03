@@ -14,8 +14,10 @@ class GeofencingDemoSceneDelegate: NSObject, UIWindowSceneDelegate {
     private var subscriptions = Set<AnyCancellable>()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
         locationService.didExitRegion
             .sink { [weak self] region in
+                print("region: \(region.identifier)")
                 self?.locationService.stopMonitoring()
                 self?.locationService.requestLocation()
             }
@@ -23,6 +25,8 @@ class GeofencingDemoSceneDelegate: NSObject, UIWindowSceneDelegate {
         locationService.didUpdateLocation
             .map { Journey.Location(coordinate: $0.coordinate) }
             .sink { [weak self] location in
+                guard location.coordinate != self?.journeyStorageService.locations.last?.coordinate else { return }
+                print("coordinate: \(location.coordinate)")
                 self?.journeyStorageService.add(location: location)
                 self?.locationService.startMonitoring(for: location.region)
             }

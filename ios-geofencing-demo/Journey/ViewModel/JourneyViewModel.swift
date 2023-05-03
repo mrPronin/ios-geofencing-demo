@@ -22,28 +22,24 @@ public extension Journey {
             }
         }
         @Published public var alert: AlertData?
+        @Published public var journey: String = ""
+        public func loadJourney() {
+            journey = journeyStorageService.locations.map({ "lat: \($0.coordinate.latitude) lon: \($0.coordinate.longitude)" }).joined(separator: "\n\n")
+        }
         
         // MARK: - Init
         init() {
-            // debug
-            print("journey: \(journeyStorageService.locations)")
-            // debug
-            
-            locationService.didUpdateLocation
-                .sink { [weak self] location in
-                    print("coordinate: \(location.coordinate)")
-                    
-                    // Define initial journey location
-                    let initialJourneyLocation = Journey.Location(coordinate: location.coordinate)
-                    self?.journeyStorageService.add(location: initialJourneyLocation)
-                    self?.locationService.startMonitoring(for: initialJourneyLocation.region)
-                }
-                .store(in: &subscriptions)
-            
             locationService.didFailWithError
                 .receive(on: DispatchQueue.main)
                 .sink { [weak self] error in
                     self?.alert = AlertData(title: "Error", message: error.localizedDescription)
+                }
+                .store(in: &subscriptions)
+
+            locationService.didUpdateLocation
+                .map { Journey.Location(coordinate: $0.coordinate) }
+                .sink { [weak self] location in
+                    self?.loadJourney()
                 }
                 .store(in: &subscriptions)
 
@@ -56,11 +52,10 @@ public extension Journey {
         
         // MARK: - Private
         private func enable() {
+            journey = ""
             locationService.stopMonitoring()
             journeyStorageService.removeLocations()
             locationService.requestLocation()
-            
-//            locationManager.startUpdatingLocation()
         }
         
         private func disable() {

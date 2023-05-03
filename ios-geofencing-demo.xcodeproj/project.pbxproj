@@ -16,6 +16,7 @@
 		099255902A029DE1001B5F05 /* Location+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0992558F2A029DE1001B5F05 /* Location+Service.swift */; };
 		099255922A02A633001B5F05 /* Location+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099255912A02A633001B5F05 /* Location+DI.swift */; };
 		099B99622A02B17B00BE6334 /* Location+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99612A02B17B00BE6334 /* Location+Errors.swift */; };
+		099B99662A02C74800BE6334 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99652A02C74800BE6334 /* CLLocationCoordinate2D+Equatable.swift */; };
 		09AB9BE429F8005A008A7BC3 /* GeofencingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */; };
 		09AB9BE629F8005A008A7BC3 /* JourneyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */; };
 		09AB9BE829F8005B008A7BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB9BE729F8005B008A7BC3 /* Assets.xcassets */; };
@@ -74,6 +75,8 @@
 		0992558F2A029DE1001B5F05 /* Location+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Service.swift"; sourceTree = "<group>"; };
 		099255912A02A633001B5F05 /* Location+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+DI.swift"; sourceTree = "<group>"; };
 		099B99612A02B17B00BE6334 /* Location+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Errors.swift"; sourceTree = "<group>"; };
+		099B99632A02C39F00BE6334 /* SimulatedLocations.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SimulatedLocations.gpx; sourceTree = "<group>"; };
+		099B99652A02C74800BE6334 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 		09AB9BE029F8005A008A7BC3 /* ios-geofencing-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-geofencing-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoApp.swift; sourceTree = "<group>"; };
 		09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyListView.swift; sourceTree = "<group>"; };
@@ -157,6 +160,14 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		099B99642A02C71800BE6334 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				099B99652A02C74800BE6334 /* CLLocationCoordinate2D+Equatable.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		09AB9BD729F8005A008A7BC3 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +196,7 @@
 				09C6C14529FFEC2F00DA6436 /* DI */,
 				09C6C12B29FFE2F000DA6436 /* Service */,
 				09AB9C1829F95E41008A7BC3 /* Journey */,
+				099B99642A02C71800BE6334 /* Helper */,
 				09AB9C1729F94D97008A7BC3 /* Info.plist */,
 				09AB9BE729F8005B008A7BC3 /* Assets.xcassets */,
 				09AB9BE929F8005B008A7BC3 /* Preview Content */,
@@ -196,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				09AB9BEA29F8005B008A7BC3 /* Preview Assets.xcassets */,
+				099B99632A02C39F00BE6334 /* SimulatedLocations.gpx */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -460,6 +473,7 @@
 				09AB9BE429F8005A008A7BC3 /* GeofencingDemoApp.swift in Sources */,
 				09C6C13129FFE37300DA6436 /* EndpointKind.swift in Sources */,
 				09C6C15B2A00616500DA6436 /* Endpoint+flickrPhotosSearch.swift in Sources */,
+				099B99662A02C74800BE6334 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				09C6C1632A006CF500DA6436 /* Flickr.swift in Sources */,
 				099255892A0260A7001B5F05 /* JourneyStorage+DI.swift in Sources */,
 				09C6C14229FFE9BD00DA6436 /* Localization.swift in Sources */,

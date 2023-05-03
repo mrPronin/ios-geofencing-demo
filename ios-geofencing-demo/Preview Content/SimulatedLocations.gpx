@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    <wpt lat="52.508910" lon="13.467159">
+        <name>Start</name>
+        <time>2023-05-03T18:35:00Z</time>
+    </wpt>
+    <wpt lat="52.513841" lon="13.474141">
+        <name>Frankfurter Allee</name>
+        <time>2023-05-03T18:35:05Z</time>
+    </wpt>
+</gpx>

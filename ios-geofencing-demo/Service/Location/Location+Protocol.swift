@@ -17,4 +17,6 @@ public protocol LocationService {
     var didFailWithError: AnyPublisher<Error, Never> { get }
     var locationManagerDidChangeAuthorization: AnyPublisher<CLLocationManager, Never> { get }
     var didExitRegion: AnyPublisher<CLRegion, Never> { get }
+    func startUpdatingLocation()
+    func stopUpdatingLocation()
 }

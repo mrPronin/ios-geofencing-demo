@@ -10,6 +10,8 @@ import SwiftUI
 public extension Journey {
     struct ListView: View {
         @StateObject var viewModel = ViewModel()
+        @Environment(\.scenePhase) var scenePhase
+        
         public var body: some View {
             NavigationStack {
                 VStack {
@@ -17,12 +19,17 @@ public extension Journey {
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
                     Text("Tap Start button to begin your journey")
+                    ScrollView {
+                        Text(viewModel.journey)
+                            .lineLimit(nil)
+                            .multilineTextAlignment(.leading)
+                            .padding()
+                    }
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(viewModel.isLocationTrackingEnabled ? "Stop" : "Start" ) {
                             viewModel.startStopLocationTracking()
-//                            print("isLocationTrackingEnabled: \(viewModel.isLocationTrackingEnabled)")
                         }
                     }
                 }
@@ -30,6 +37,10 @@ public extension Journey {
             }
             .alert(item: $viewModel.alert) { alertData in
                 Alert(title: Text(alertData.title), message: Text(alertData.message), dismissButton: .default(Text("OK")))
+            }
+            .onChange(of: scenePhase) { newPhase in
+                guard newPhase == .active else { return }
+                viewModel.loadJourney()
             }
         }
     }

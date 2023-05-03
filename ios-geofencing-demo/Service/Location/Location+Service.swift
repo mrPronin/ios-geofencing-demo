@@ -34,6 +34,14 @@ public extension Location {
             }
         }
         
+        public func startUpdatingLocation() {
+            locationManager.startUpdatingLocation()
+        }
+        
+        public func stopUpdatingLocation() {
+            locationManager.stopUpdatingLocation()
+        }
+        
         // MARK: - Init
         override init() {
             locationManager = CLLocationManager()
@@ -64,10 +72,12 @@ extension Location.Service: CLLocationManagerDelegate {
     }
     
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
         _didFailWithError.send(Location.Errors.locationManagerFailedWith(localizedDescription: error.localizedDescription))
     }
     
     public func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        print(error)
         guard let region = region else {
             _didFailWithError.send(Location.Errors.monitoringFailedFor(region: "unknown"))
             return
@@ -80,5 +90,9 @@ extension Location.Service: CLLocationManagerDelegate {
             _didFailWithError.send(Location.Errors.notAuthorizedAlways)
             return
         }
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        _didExitRegion.send(region)
     }
 }
