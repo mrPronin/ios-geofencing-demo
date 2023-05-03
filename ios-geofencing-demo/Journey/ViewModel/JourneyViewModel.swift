@@ -21,6 +21,7 @@ public extension Journey {
                 disable()
             }
         }
+        @Published public var alert: AlertData?
         
         // MARK: - Init
         override init() {
@@ -34,13 +35,21 @@ public extension Journey {
         }
         
         // MARK: - Private
-        func enable() {
+        private func enable() {
             locationManager.requestLocation()
+            
 //            locationManager.startUpdatingLocation()
         }
         
-        func disable() {
+        private func disable() {
             // TODO: disable location tracking
+        }
+        
+        private func startMonitoring(location: Journey.Location) {
+            guard CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) else {
+                alert = AlertData(title: "Error", message: "Geofencing is not supported on this device!")
+                return
+            }
         }
         
         private let locationManager: CLLocationManager
@@ -60,7 +69,10 @@ extension Journey.ViewModel: CLLocationManagerDelegate {
         print("coordinate: \(location.coordinate)")
         
         // Define initial journey location
-        journeyStorageService.add(location: Journey.Location(coordinate: location.coordinate))
+        let initialJourneyLocation = Journey.Location(coordinate: location.coordinate)
+        journeyStorageService.add(location: initialJourneyLocation)
+        
+        startMonitoring(location: initialJourneyLocation)
         
         flickrService.flickrPhotosSearch(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             .sink(receiveCompletion: { print ("completion: \($0)") }, receiveValue: { model in
@@ -80,4 +92,10 @@ extension Journey.ViewModel: CLLocationManagerDelegate {
     public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         // TODO: implement alert if != authorizedAlways
     }
+}
+
+public struct AlertData: Identifiable {
+    public let id = UUID()
+    public let title: String
+    public let message: String
 }

@@ -28,6 +28,9 @@ public extension Journey {
                 }
                 .padding()
             }
+            .alert(item: $viewModel.alert) { alertData in
+                Alert(title: Text(alertData.title), message: Text(alertData.message), dismissButton: .default(Text("OK")))
+            }
         }
     }
 }
