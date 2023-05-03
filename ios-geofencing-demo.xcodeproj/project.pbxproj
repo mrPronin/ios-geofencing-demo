@@ -17,6 +17,11 @@
 		099255922A02A633001B5F05 /* Location+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099255912A02A633001B5F05 /* Location+DI.swift */; };
 		099B99622A02B17B00BE6334 /* Location+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99612A02B17B00BE6334 /* Location+Errors.swift */; };
 		099B99662A02C74800BE6334 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99652A02C74800BE6334 /* CLLocationCoordinate2D+Equatable.swift */; };
+		099B99692A02FABE00BE6334 /* LocationLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99682A02FABE00BE6334 /* LocationLog.swift */; };
+		099B996B2A02FAD800BE6334 /* LocationLog+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B996A2A02FAD800BE6334 /* LocationLog+Protocol.swift */; };
+		099B996D2A02FC4A00BE6334 /* LocationLog+Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B996C2A02FC4A00BE6334 /* LocationLog+Defines.swift */; };
+		099B996F2A02FC7B00BE6334 /* LocationLog+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B996E2A02FC7B00BE6334 /* LocationLog+Service.swift */; };
+		099B99712A02FDDE00BE6334 /* LocationLog+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99702A02FDDE00BE6334 /* LocationLog+DI.swift */; };
 		09AB9BE429F8005A008A7BC3 /* GeofencingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */; };
 		09AB9BE629F8005A008A7BC3 /* JourneyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */; };
 		09AB9BE829F8005B008A7BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB9BE729F8005B008A7BC3 /* Assets.xcassets */; };
@@ -77,6 +82,11 @@
 		099B99612A02B17B00BE6334 /* Location+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Errors.swift"; sourceTree = "<group>"; };
 		099B99632A02C39F00BE6334 /* SimulatedLocations.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SimulatedLocations.gpx; sourceTree = "<group>"; };
 		099B99652A02C74800BE6334 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
+		099B99682A02FABE00BE6334 /* LocationLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLog.swift; sourceTree = "<group>"; };
+		099B996A2A02FAD800BE6334 /* LocationLog+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationLog+Protocol.swift"; sourceTree = "<group>"; };
+		099B996C2A02FC4A00BE6334 /* LocationLog+Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationLog+Defines.swift"; sourceTree = "<group>"; };
+		099B996E2A02FC7B00BE6334 /* LocationLog+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationLog+Service.swift"; sourceTree = "<group>"; };
+		099B99702A02FDDE00BE6334 /* LocationLog+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationLog+DI.swift"; sourceTree = "<group>"; };
 		09AB9BE029F8005A008A7BC3 /* ios-geofencing-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-geofencing-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoApp.swift; sourceTree = "<group>"; };
 		09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyListView.swift; sourceTree = "<group>"; };
@@ -166,6 +176,18 @@
 				099B99652A02C74800BE6334 /* CLLocationCoordinate2D+Equatable.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		099B99672A02FAB100BE6334 /* LocationLog */ = {
+			isa = PBXGroup;
+			children = (
+				099B99682A02FABE00BE6334 /* LocationLog.swift */,
+				099B996A2A02FAD800BE6334 /* LocationLog+Protocol.swift */,
+				099B996C2A02FC4A00BE6334 /* LocationLog+Defines.swift */,
+				099B996E2A02FC7B00BE6334 /* LocationLog+Service.swift */,
+				099B99702A02FDDE00BE6334 /* LocationLog+DI.swift */,
+			);
+			path = LocationLog;
 			sourceTree = "<group>";
 		};
 		09AB9BD729F8005A008A7BC3 = {
@@ -260,6 +282,7 @@
 		09C6C12B29FFE2F000DA6436 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				099B99672A02FAB100BE6334 /* LocationLog */,
 				0992558A2A029183001B5F05 /* Location */,
 				09C6C1602A006CAA00DA6436 /* Flickr */,
 				09C6C14029FFE9AE00DA6436 /* Localization */,
@@ -448,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09C6C14D29FFF26A00DA6436 /* Localization+Service.swift in Sources */,
+				099B996D2A02FC4A00BE6334 /* LocationLog+Defines.swift in Sources */,
 				09C6C13729FFE43200DA6436 /* Network+Errors.swift in Sources */,
 				09C6C14729FFF16000DA6436 /* InjectionKey.swift in Sources */,
 				09C6C1672A00712700DA6436 /* Flickr+Service.swift in Sources */,
@@ -455,6 +479,7 @@
 				09C6C13929FFE4C600DA6436 /* Network+handleError.swift in Sources */,
 				09C6C13B29FFE4DB00DA6436 /* Network+httpMethod.swift in Sources */,
 				09C6C14429FFEA2C00DA6436 /* Localization+localized.swift in Sources */,
+				099B99692A02FABE00BE6334 /* LocationLog.swift in Sources */,
 				09AB9C1B29F95EA6008A7BC3 /* JourneyLocation.swift in Sources */,
 				09C6C12F29FFE34100DA6436 /* Endpoint.swift in Sources */,
 				099255872A025DFA001B5F05 /* JourneyStorage+Defines.swift in Sources */,
@@ -462,7 +487,9 @@
 				09AB9C1629F949E4008A7BC3 /* Journey.swift in Sources */,
 				099255922A02A633001B5F05 /* Location+DI.swift in Sources */,
 				0992558C2A02918A001B5F05 /* Location.swift in Sources */,
+				099B996F2A02FC7B00BE6334 /* LocationLog+Service.swift in Sources */,
 				0992558E2A0292A7001B5F05 /* Location+Protocol.swift in Sources */,
+				099B996B2A02FAD800BE6334 /* LocationLog+Protocol.swift in Sources */,
 				09C6C15D2A0061C000DA6436 /* Flickr+Image.swift in Sources */,
 				09AB9C1029F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift in Sources */,
 				09AB9C1429F949A9008A7BC3 /* JourneyViewModel.swift in Sources */,
@@ -483,6 +510,7 @@
 				09C6C15129FFF3CE00DA6436 /* Injected.swift in Sources */,
 				099255842A025AAB001B5F05 /* JourneyStorage+Service.swift in Sources */,
 				099B99622A02B17B00BE6334 /* Location+Errors.swift in Sources */,
+				099B99712A02FDDE00BE6334 /* LocationLog+DI.swift in Sources */,
 				099255822A025964001B5F05 /* JourneyStorage+Protocol.swift in Sources */,
 				09C6C13329FFE3BE00DA6436 /* AccessToken.swift in Sources */,
 				09C6C14F29FFF38D00DA6436 /* InjectedValues.swift in Sources */,

@@ -36,6 +36,7 @@
 - [x] refactor: extract locationManager to separate service - LocationService, handle location errors
 - [x] handle location event 'didExitRegion', remove current monitoring region, get current location and save it to the list, define new monitoring region
 - [x] add simulated locations, test feature, fix bugs
+- [x] implement location log service
 - [ ] create UI for images list
 - [ ] fetch images for location list
 - [ ] refactor to TCA

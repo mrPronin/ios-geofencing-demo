@@ -22,9 +22,10 @@ public extension Journey {
             }
         }
         @Published public var alert: AlertData?
-        @Published public var journey: String = ""
-        public func loadJourney() {
-            journey = journeyStorageService.locations.map({ "lat: \($0.coordinate.latitude) lon: \($0.coordinate.longitude)" }).joined(separator: "\n\n")
+        @Published public var logs: String = ""
+        public func loadLogs() {
+            logs = locationLogService.logs.joined(separator: "\n\n")
+//            journeyStorageService.locations.map({ "lat: \($0.coordinate.latitude) lon: \($0.coordinate.longitude)" }).joined(separator: "\n\n")
         }
         
         // MARK: - Init
@@ -39,7 +40,13 @@ public extension Journey {
             locationService.didUpdateLocation
                 .map { Journey.Location(coordinate: $0.coordinate) }
                 .sink { [weak self] location in
-                    self?.loadJourney()
+                    self?.loadLogs()
+                }
+                .store(in: &subscriptions)
+            
+            locationService.didExitRegion
+                .sink { [weak self] region in
+                    self?.loadLogs()
                 }
                 .store(in: &subscriptions)
 
@@ -52,10 +59,11 @@ public extension Journey {
         
         // MARK: - Private
         private func enable() {
-            journey = ""
+            logs = ""
             locationService.stopMonitoring()
             journeyStorageService.removeLocations()
             locationService.requestLocation()
+            locationLogService.removeLogs()
         }
         
         private func disable() {
@@ -65,6 +73,7 @@ public extension Journey {
         @Injected(\.flickrService) private var flickrService: FlickrService
         @Injected(\.journeyStorageProvider) private var journeyStorageService: JourneyStorageService
         @Injected(\.locationProvider) private var locationService: LocationService
+        @Injected(\.locationLogProvider) private var locationLogService: LocationLogService
         
         var subscriptions = Set<AnyCancellable>()
     }
