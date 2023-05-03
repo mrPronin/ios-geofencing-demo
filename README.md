@@ -23,11 +23,17 @@
     - [x] define flickr service protocol
     - [x] implement flickr service and inject it into JourneyViewModel
     - [x] fix issues with base url and flickr response
+- [x] add service to persist ordered location list, implement addLocation, getLocations and removeLocations methods
+    - [x] define journey storage service protocol
+    - [x] implement journey storage service with user defaults
+    - [x] implement dependency injection for journey storage service
+    - [x] inject journey storage service into JourneyViewModel
+- [ ] get initial location and store it to the list
 - [ ] define initial monitoring region for user starting location and start monotoring when user exit region, create 'startMonitoring' method
 - [ ] create 'stopMonitoring' method to remove monitoring region
-- [ ] add service to store locations list, fetch by id
 - [ ] handle location errors
-- [ ] handle location event 'didExitRegion', remove current  region, save / get current location, store it, define new region
-- [ ] add simulated locations
+- [ ] handle location event 'didExitRegion', remove current monitoring region, save / get current location, store it, define new monitoring region
 - [ ] create UI for images list
+- [ ] fetch images for location list
+- [ ] add simulated locations
 - [ ] refactor to TCA
