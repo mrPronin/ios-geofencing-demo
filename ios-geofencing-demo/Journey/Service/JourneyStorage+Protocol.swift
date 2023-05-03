@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol JourneyStorageService {
-    func addLocation(_ location: Journey.Location)
+    func add(location: Journey.Location)
     var locations: [Journey.Location] { get }
     func removeLocations()
 }

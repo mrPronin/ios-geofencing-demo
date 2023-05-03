@@ -60,7 +60,7 @@ extension Journey.ViewModel: CLLocationManagerDelegate {
         print("coordinate: \(location.coordinate)")
         flickrService.flickrPhotosSearch(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             .sink(receiveCompletion: { print ("completion: \($0)") }, receiveValue: { model in
-                print(model.photos.first)
+//                print(model.photos.first)
             })
             .store(in: &subscriptions)
     }

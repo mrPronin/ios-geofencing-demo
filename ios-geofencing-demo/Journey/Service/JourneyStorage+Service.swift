@@ -10,7 +10,7 @@ import Foundation
 public extension Journey {
     struct StorageService: JourneyStorageService {
         // MARK: - Public
-        public func addLocation(_ location: Journey.Location) {
+        public func add(location: Journey.Location) {
             var savedLocations = locations
             savedLocations.append(location)
             save(locations: savedLocations)
