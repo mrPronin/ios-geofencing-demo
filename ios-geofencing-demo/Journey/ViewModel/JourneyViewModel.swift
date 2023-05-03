@@ -50,6 +50,13 @@ public extension Journey {
                 alert = AlertData(title: "Error", message: "Geofencing is not supported on this device!")
                 return
             }
+            locationManager.startMonitoring(for: location.region)
+        }
+        
+        private func stopMonitoring() {
+            locationManager.monitoredRegions.forEach { [weak self] region in
+                self?.locationManager.stopMonitoring(for: region)
+            }
         }
         
         private let locationManager: CLLocationManager

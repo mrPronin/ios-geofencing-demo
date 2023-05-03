@@ -30,11 +30,11 @@
     - [x] inject journey storage service into JourneyViewModel
 - [x] get initial location and store it to the list
 - [x] show alert if geofencing is not supported on current device
-- [ ] define initial monitoring region for user starting location and start monotoring when user exit region, create 'startMonitoring' method
-- [ ] create 'stopMonitoring' method to remove monitoring region
+- [x] define initial monitoring region for user starting location and start monotoring when user exit region
+- [x] create 'stopMonitoring' method to remove monitoring region
+- [ ] implement alert if authorizationStatus != authorizedAlways, update JourneyViewModel & JourneyListView
 - [ ] handle location errors
 - [ ] handle location event 'didExitRegion', remove current monitoring region, save / get current location, store it, define new monitoring region
-- [ ] update JourneyViewModel & JourneyListView: implement alert if authorizationStatus != authorizedAlways 
 - [ ] create UI for images list
 - [ ] fetch images for location list
 - [ ] add simulated locations
