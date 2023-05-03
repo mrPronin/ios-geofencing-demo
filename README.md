@@ -28,7 +28,7 @@
     - [x] implement journey storage service with user defaults
     - [x] implement dependency injection for journey storage service
     - [x] inject journey storage service into JourneyViewModel
-- [ ] get initial location and store it to the list
+- [x] get initial location and store it to the list
 - [ ] define initial monitoring region for user starting location and start monotoring when user exit region, create 'startMonitoring' method
 - [ ] create 'stopMonitoring' method to remove monitoring region
 - [ ] handle location errors
