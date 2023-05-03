@@ -97,7 +97,13 @@ extension Journey.ViewModel: CLLocationManagerDelegate {
     }
     
     public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        // TODO: implement alert if != authorizedAlways
+        if manager.authorizationStatus != .authorizedAlways {
+            let message = """
+            Your journey will only be activated once you grant
+            permission to access the device location.
+            """
+            alert = AlertData(title: "Warning", message: message)
+          }
     }
 }
 

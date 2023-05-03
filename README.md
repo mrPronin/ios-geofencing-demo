@@ -32,7 +32,7 @@
 - [x] show alert if geofencing is not supported on current device
 - [x] define initial monitoring region for user starting location and start monotoring when user exit region
 - [x] create 'stopMonitoring' method to remove monitoring region
-- [ ] implement alert if authorizationStatus != authorizedAlways, update JourneyViewModel & JourneyListView
+- [x] implement alert if authorizationStatus != authorizedAlways
 - [ ] handle location errors
 - [ ] handle location event 'didExitRegion', remove current monitoring region, save / get current location, store it, define new monitoring region
 - [ ] create UI for images list
