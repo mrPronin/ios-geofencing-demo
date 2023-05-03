@@ -25,6 +25,10 @@ public extension Journey {
         
         // MARK: - Init
         init() {
+            // debug
+            print("journey: \(journeyStorageService.locations)")
+            // debug
+            
             locationService.didUpdateLocation
                 .sink { [weak self] location in
                     print("coordinate: \(location.coordinate)")
