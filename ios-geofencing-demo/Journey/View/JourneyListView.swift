@@ -22,7 +22,7 @@ public extension Journey {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(viewModel.isLocationTrackingEnabled ? "Stop" : "Start" ) {
                             viewModel.startStopLocationTracking()
-                            print("isLocationTrackingEnabled: \(viewModel.isLocationTrackingEnabled)")
+//                            print("isLocationTrackingEnabled: \(viewModel.isLocationTrackingEnabled)")
                         }
                     }
                 }
