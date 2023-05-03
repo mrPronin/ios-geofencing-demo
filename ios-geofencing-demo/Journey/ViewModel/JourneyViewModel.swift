@@ -58,6 +58,10 @@ extension Journey.ViewModel: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         print("coordinate: \(location.coordinate)")
+        
+        // Define initial journey location
+        journeyStorageService.add(location: Journey.Location(coordinate: location.coordinate))
+        
         flickrService.flickrPhotosSearch(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             .sink(receiveCompletion: { print ("completion: \($0)") }, receiveValue: { model in
 //                print(model.photos.first)

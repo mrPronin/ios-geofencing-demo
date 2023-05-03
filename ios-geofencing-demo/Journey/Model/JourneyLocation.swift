@@ -11,7 +11,7 @@ import CoreLocation
 public extension Journey {
     struct Location: Codable {
         // MARK: - Public
-        let identifier: String
+        let identifier: UUID
         let coordinate: CLLocationCoordinate2D
         
         // MARK: - Codable
@@ -20,7 +20,7 @@ public extension Journey {
             let latitude = try container.decode(Double.self, forKey: .latitude)
             let longitude = try container.decode(Double.self, forKey: .longitude)
             coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-            identifier = try container.decode(String.self, forKey: .identifier)
+            identifier = try container.decode(UUID.self, forKey: .identifier)
         }
         
         public func encode(to encoder: Encoder) throws {
@@ -30,11 +30,16 @@ public extension Journey {
             try container.encode(identifier, forKey: .identifier)
         }
         
+        // MARK: - Init
+        init(coordinate: CLLocationCoordinate2D) {
+            identifier = UUID()
+            self.coordinate = coordinate
+        }
+        
         // MARK: - Private
         private enum CodingKeys: String, CodingKey {
           case latitude, longitude, identifier
         }
-
     }
 }
 
@@ -44,7 +49,7 @@ public extension Journey.Location {
       let region = CLCircularRegion(
         center: coordinate,
         radius: CLLocationDistance(Constants.trackingRadius),
-        identifier: identifier
+        identifier: identifier.uuidString
       )
 
       region.notifyOnEntry = false
