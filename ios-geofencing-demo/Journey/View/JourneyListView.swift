@@ -8,11 +8,11 @@
 import SwiftUI
 
 public extension Journey {
-    struct ListView: View {
-        @StateObject var viewModel: ViewModel
+    struct ListView<VM: JourneyViewModel>: View {
+        @StateObject var viewModel: VM
         @Environment(\.scenePhase) var scenePhase
         
-        public init(viewModel: ViewModel) {
+        public init(viewModel: VM) {
             self._viewModel = StateObject(wrappedValue: viewModel)
         }
         

@@ -42,6 +42,6 @@
 - [x] fetch images for location list
 - [x] clean-up debug and log
 - [x] create UI for images list
-- [ ] create journey view model protocol
+- [x] create journey view model protocol
 - [ ] unit-tests
 - [ ] refactor to TCA

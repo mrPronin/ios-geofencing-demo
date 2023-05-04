@@ -9,8 +9,19 @@ import SwiftUI
 import CoreLocation
 import Combine
 
+public protocol JourneyViewModel: ObservableObject {
+    var isLocationTrackingEnabled: Bool { get }
+    var alert: AlertData? { get set }
+    var images: [Flickr.Image] { get }
+    var isLoading: Bool { get }
+    var journeyExist: Bool { get }
+    
+    func startStopLocationTracking()
+    func loadImages()
+}
+
 public extension Journey {
-    class ViewModel: ObservableObject {
+    class ViewModel: JourneyViewModel {
         // MARK: - Public
         @Published private(set) public var isLocationTrackingEnabled = false
         public func startStopLocationTracking() {
@@ -47,7 +58,7 @@ public extension Journey {
         @Published private(set) public var journeyExist: Bool = false
 
         // MARK: - Init
-        init() {
+        public init() {
             locationService.didFailWithError
                 .receive(on: DispatchQueue.main)
                 .map { AlertData(title: "Error", message: $0.localizedDescription) }
