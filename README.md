@@ -58,3 +58,6 @@
         - [x] unit-test journey view model: testStartStopLocationTracking_Start, testStartStopLocationTracking_Stop
         - [x] unit-test journey view model: testLoadImages and testLoadImagesWithError
     - [x] unit-test endpoint for network
+    - [ ] unit-test flickr service (?)
+    - [ ] unit-test location service, mock CLLocationManager in LocationService
+- [ ] implement full app localization
