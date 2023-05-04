@@ -37,6 +37,8 @@
 - [x] handle location event 'didExitRegion', remove current monitoring region, get current location and save it to the list, define new monitoring region
 - [x] add simulated locations, test feature, fix bugs
 - [x] implement location log service
-- [ ] create UI for images list
+- [x] debug didExitRegion on device, small improvements
+- [ ] create mocked JourneyStorage and feed it with mocked journey json
 - [ ] fetch images for location list
+- [ ] create UI for images list
 - [ ] refactor to TCA
