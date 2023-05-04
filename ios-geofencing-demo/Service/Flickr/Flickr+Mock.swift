@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+@testable import ios_geofencing_demo
 
 public extension Flickr {
     struct ServiceMock: FlickrService {

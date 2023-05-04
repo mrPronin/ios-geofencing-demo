@@ -27,4 +27,12 @@ class JourneyViewModelTest: XCTestCase {
         InjectedValues[\.locationProvider] = Location.Service()
         sut = nil
     }
+    
+    func testInitialState() {
+        XCTAssertFalse(sut.isLocationTrackingEnabled)
+        XCTAssertNil(sut.alert)
+        XCTAssertTrue(sut.images.isEmpty)
+        XCTAssertFalse(sut.isLoading)
+        XCTAssertFalse(sut.isJourneyExist)
+    }
 }

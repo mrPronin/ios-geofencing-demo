@@ -14,16 +14,24 @@ public protocol JourneyViewModel: ObservableObject {
     var alert: AlertData? { get set }
     var images: [Flickr.Image] { get }
     var isLoading: Bool { get }
-    var journeyExist: Bool { get }
+    var isJourneyExist: Bool { get }
     
     func startStopLocationTracking()
     func loadImages()
+    func loadJourney()
 }
 
 public extension Journey {
     class ViewModel: JourneyViewModel {
         // MARK: - Public
         @Published private(set) public var isLocationTrackingEnabled = false
+        @Published public var alert: AlertData?
+        
+        @Published private(set) public var images: [Flickr.Image] = []
+        @Published private(set) public var isLoading = false
+        
+        @Published private(set) public var isJourneyExist: Bool = false
+        
         public func startStopLocationTracking() {
             isLocationTrackingEnabled.toggle()
             if isLocationTrackingEnabled {
@@ -32,9 +40,6 @@ public extension Journey {
                 disable()
             }
         }
-        @Published public var alert: AlertData?
-        
-        @Published private(set) public var images: [Flickr.Image] = []
         public func loadImages() {
             let locations = journeyStorageService.locations.map { (latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude) }
             guard !locations.isEmpty else {
@@ -56,9 +61,9 @@ public extension Journey {
 //                })
                 .assign(to: &$images)
         }
-        @Published private(set) public var isLoading = false
-        
-        @Published private(set) public var journeyExist: Bool = false
+        public func loadJourney() {
+            isJourneyExist = !journeyStorageService.locations.isEmpty
+        }
 
         // MARK: - Init
         public init() {
@@ -66,7 +71,6 @@ public extension Journey {
                 .receive(on: DispatchQueue.main)
                 .map { AlertData(title: "Error", message: $0.localizedDescription) }
                 .assign(to: &$alert)
-            journeyExist = !journeyStorageService.locations.isEmpty
         }
         
         // MARK: - Private

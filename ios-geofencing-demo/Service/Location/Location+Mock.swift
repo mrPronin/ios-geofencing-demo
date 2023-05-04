@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import Combine
+@testable import ios_geofencing_demo
 
 public extension Location {
     struct ServiceMock: LocationService {

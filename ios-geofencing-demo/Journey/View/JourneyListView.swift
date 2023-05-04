@@ -19,7 +19,7 @@ public extension Journey {
         public var body: some View {
             NavigationView {
                 NavigationStack {
-                    if !viewModel.journeyExist {
+                    if !viewModel.isJourneyExist {
                         VStack {
                             Image(systemName: "globe")
                                 .imageScale(.large)
@@ -70,6 +70,7 @@ public extension Journey {
                 .onChange(of: scenePhase) { newPhase in
                     guard newPhase == .active else { return }
                     viewModel.loadImages()
+                    viewModel.loadJourney()
                 }
             }
         }

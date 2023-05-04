@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@testable import ios_geofencing_demo
 
 public extension Journey {
     struct StorageServiceMock: JourneyStorageService {
@@ -25,7 +26,5 @@ public extension Journey {
         }
         
         public func removeLocations() {}
-        
-        
     }
 }

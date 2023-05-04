@@ -22,17 +22,12 @@
 		099B996D2A02FC4A00BE6334 /* LocationLog+Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B996C2A02FC4A00BE6334 /* LocationLog+Defines.swift */; };
 		099B996F2A02FC7B00BE6334 /* LocationLog+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B996E2A02FC7B00BE6334 /* LocationLog+Service.swift */; };
 		099B99712A02FDDE00BE6334 /* LocationLog+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99702A02FDDE00BE6334 /* LocationLog+DI.swift */; };
-		099B99732A03C4B400BE6334 /* mocked-journey.json in Resources */ = {isa = PBXBuildFile; fileRef = 099B99722A03C4B400BE6334 /* mocked-journey.json */; };
-		099B99752A03C5DB00BE6334 /* JourneyStorage+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99742A03C5DB00BE6334 /* JourneyStorage+Mock.swift */; };
 		099B99762A03C5DB00BE6334 /* JourneyStorage+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99742A03C5DB00BE6334 /* JourneyStorage+Mock.swift */; };
-		099B99782A03F38700BE6334 /* Flickr+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99772A03F38700BE6334 /* Flickr+Mock.swift */; };
 		099B99792A03F38700BE6334 /* Flickr+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99772A03F38700BE6334 /* Flickr+Mock.swift */; };
 		099B997B2A03F42B00BE6334 /* mocked-journey.json in Resources */ = {isa = PBXBuildFile; fileRef = 099B99722A03C4B400BE6334 /* mocked-journey.json */; };
-		099B997F2A03F63C00BE6334 /* flickr-mocked-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 099B997E2A03F63C00BE6334 /* flickr-mocked-response.json */; };
 		099B99802A03F63C00BE6334 /* flickr-mocked-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 099B997E2A03F63C00BE6334 /* flickr-mocked-response.json */; };
-		099B99822A03F9D300BE6334 /* Location+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99812A03F9D300BE6334 /* Location+Mock.swift */; };
-		099B99832A03F9D300BE6334 /* Location+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99812A03F9D300BE6334 /* Location+Mock.swift */; };
 		099B99872A03FCE500BE6334 /* JourneyViewModel+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99862A03FCE500BE6334 /* JourneyViewModel+Test.swift */; };
+		099B998A2A0401A000BE6334 /* Location+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99812A03F9D300BE6334 /* Location+Mock.swift */; };
 		09AB9BE429F8005A008A7BC3 /* GeofencingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */; };
 		09AB9BE629F8005A008A7BC3 /* JourneyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */; };
 		09AB9BE829F8005B008A7BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB9BE729F8005B008A7BC3 /* Assets.xcassets */; };
@@ -490,10 +485,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				09AB9BEB29F8005B008A7BC3 /* Preview Assets.xcassets in Resources */,
-				099B997F2A03F63C00BE6334 /* flickr-mocked-response.json in Resources */,
 				09C6C15529FFFB9700DA6436 /* Localizable.strings in Resources */,
 				09AB9BE829F8005B008A7BC3 /* Assets.xcassets in Resources */,
-				099B99732A03C4B400BE6334 /* mocked-journey.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +526,6 @@
 				099B996F2A02FC7B00BE6334 /* LocationLog+Service.swift in Sources */,
 				0992558E2A0292A7001B5F05 /* Location+Protocol.swift in Sources */,
 				099B996B2A02FAD800BE6334 /* LocationLog+Protocol.swift in Sources */,
-				099B99822A03F9D300BE6334 /* Location+Mock.swift in Sources */,
 				09C6C15D2A0061C000DA6436 /* Flickr+Image.swift in Sources */,
 				09AB9C1029F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift in Sources */,
 				09AB9C1429F949A9008A7BC3 /* JourneyViewModel.swift in Sources */,
@@ -555,9 +547,7 @@
 				099255842A025AAB001B5F05 /* JourneyStorage+Service.swift in Sources */,
 				099B99622A02B17B00BE6334 /* Location+Errors.swift in Sources */,
 				099B99712A02FDDE00BE6334 /* LocationLog+DI.swift in Sources */,
-				099B99782A03F38700BE6334 /* Flickr+Mock.swift in Sources */,
 				099255822A025964001B5F05 /* JourneyStorage+Protocol.swift in Sources */,
-				099B99752A03C5DB00BE6334 /* JourneyStorage+Mock.swift in Sources */,
 				09C6C13329FFE3BE00DA6436 /* AccessToken.swift in Sources */,
 				09C6C14F29FFF38D00DA6436 /* InjectedValues.swift in Sources */,
 				09C6C1692A00789900DA6436 /* Flickr+DI.swift in Sources */,
@@ -570,7 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				099B99832A03F9D300BE6334 /* Location+Mock.swift in Sources */,
+				099B998A2A0401A000BE6334 /* Location+Mock.swift in Sources */,
 				099B99872A03FCE500BE6334 /* JourneyViewModel+Test.swift in Sources */,
 				099B99762A03C5DB00BE6334 /* JourneyStorage+Mock.swift in Sources */,
 				09AB9BF529F8005B008A7BC3 /* ios_geofencing_demoTests.swift in Sources */,
@@ -786,6 +776,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HUV2SZ24Y2;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -805,6 +796,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HUV2SZ24Y2;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
