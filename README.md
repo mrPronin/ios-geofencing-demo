@@ -44,13 +44,13 @@
 - [x] create UI for images list
 - [x] create journey view model protocol
 - [ ] unit-tests
-    - [ ] implement unit-tests for journey view model
+    - [x] implement unit-tests for journey view model
         - [x] create mocked Flickr response and Fllickr mocked service
         - [x] create mocked location service
         - [x] unit-test journey view model: testInitialState
         - [x] unit-test journey view model: testStartStopLocationTracking_Start, testStartStopLocationTracking_Stop
         - [x] unit-test journey view model: testLoadImages and testLoadImagesWithError
-    - [ ] network
+    - [x] unit-test endpoint for network
     - [ ] localization service
     - [ ] flickr service
     - [ ] location service
