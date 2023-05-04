@@ -61,3 +61,4 @@
     - [ ] unit-test flickr service (?)
     - [ ] unit-test location service, mock CLLocationManager in LocationService
 - [ ] implement full app localization
+- [ ] add SwiftLint
