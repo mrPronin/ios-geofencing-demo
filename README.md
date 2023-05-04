@@ -62,3 +62,4 @@
     - [ ] unit-test location service, mock CLLocationManager in LocationService
 - [ ] implement full app localization
 - [ ] add SwiftLint
+- [ ] refactor to TCA
