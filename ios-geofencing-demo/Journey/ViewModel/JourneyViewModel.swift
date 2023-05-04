@@ -24,7 +24,8 @@ public extension Journey {
         @Published public var alert: AlertData?
         @Published public var logs: String = ""
         public func loadLogs() {
-            logs = locationLogService.logs.joined(separator: "\n\n")
+//            logs = locationLogService.logs.joined(separator: "\n\n")
+            logs = journeyStorageService.locations.enumerated().map { "#\($0.offset)\nlat: \($0.element.coordinate.latitude)\nlon: \($0.element.coordinate.longitude)" }.joined(separator: "\n\n")
         }
         @Published public var distance: Double = 0
         

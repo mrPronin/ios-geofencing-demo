@@ -38,7 +38,9 @@
 - [x] add simulated locations, test feature, fix bugs
 - [x] implement location log service
 - [x] debug didExitRegion on device, small improvements
-- [ ] create mocked JourneyStorage and feed it with mocked journey json
+- [x] create mocked JourneyStorage and feed it with mocked journey json
 - [ ] fetch images for location list
 - [ ] create UI for images list
+- [ ] create journey view model protocol
+- [ ] unit-tests
 - [ ] refactor to TCA

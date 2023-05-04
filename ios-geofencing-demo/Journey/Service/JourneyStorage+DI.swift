@@ -8,7 +8,7 @@
 import Foundation
 
 private struct JourneyStorageProviderKey: InjectionKey {
-    static var currentValue: JourneyStorageService = Journey.StorageService()
+    static var currentValue: JourneyStorageService = Journey.StorageServiceMock()
 }
 
 extension InjectedValues {

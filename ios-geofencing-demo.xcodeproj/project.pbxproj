@@ -22,6 +22,9 @@
 		099B996D2A02FC4A00BE6334 /* LocationLog+Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B996C2A02FC4A00BE6334 /* LocationLog+Defines.swift */; };
 		099B996F2A02FC7B00BE6334 /* LocationLog+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B996E2A02FC7B00BE6334 /* LocationLog+Service.swift */; };
 		099B99712A02FDDE00BE6334 /* LocationLog+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99702A02FDDE00BE6334 /* LocationLog+DI.swift */; };
+		099B99732A03C4B400BE6334 /* mocked-journey.json in Resources */ = {isa = PBXBuildFile; fileRef = 099B99722A03C4B400BE6334 /* mocked-journey.json */; };
+		099B99752A03C5DB00BE6334 /* JourneyStorage+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99742A03C5DB00BE6334 /* JourneyStorage+Mock.swift */; };
+		099B99762A03C5DB00BE6334 /* JourneyStorage+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99742A03C5DB00BE6334 /* JourneyStorage+Mock.swift */; };
 		09AB9BE429F8005A008A7BC3 /* GeofencingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */; };
 		09AB9BE629F8005A008A7BC3 /* JourneyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */; };
 		09AB9BE829F8005B008A7BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB9BE729F8005B008A7BC3 /* Assets.xcassets */; };
@@ -87,6 +90,8 @@
 		099B996C2A02FC4A00BE6334 /* LocationLog+Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationLog+Defines.swift"; sourceTree = "<group>"; };
 		099B996E2A02FC7B00BE6334 /* LocationLog+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationLog+Service.swift"; sourceTree = "<group>"; };
 		099B99702A02FDDE00BE6334 /* LocationLog+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationLog+DI.swift"; sourceTree = "<group>"; };
+		099B99722A03C4B400BE6334 /* mocked-journey.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mocked-journey.json"; sourceTree = "<group>"; };
+		099B99742A03C5DB00BE6334 /* JourneyStorage+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JourneyStorage+Mock.swift"; sourceTree = "<group>"; };
 		09AB9BE029F8005A008A7BC3 /* ios-geofencing-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-geofencing-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoApp.swift; sourceTree = "<group>"; };
 		09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyListView.swift; sourceTree = "<group>"; };
@@ -153,6 +158,7 @@
 				099255812A025964001B5F05 /* JourneyStorage+Protocol.swift */,
 				099255862A025DFA001B5F05 /* JourneyStorage+Defines.swift */,
 				099255832A025AAB001B5F05 /* JourneyStorage+Service.swift */,
+				099B99742A03C5DB00BE6334 /* JourneyStorage+Mock.swift */,
 				099255882A0260A7001B5F05 /* JourneyStorage+DI.swift */,
 			);
 			path = Service;
@@ -231,6 +237,7 @@
 			children = (
 				09AB9BEA29F8005B008A7BC3 /* Preview Assets.xcassets */,
 				099B99632A02C39F00BE6334 /* SimulatedLocations.gpx */,
+				099B99722A03C4B400BE6334 /* mocked-journey.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -453,6 +460,7 @@
 				09AB9BEB29F8005B008A7BC3 /* Preview Assets.xcassets in Resources */,
 				09C6C15529FFFB9700DA6436 /* Localizable.strings in Resources */,
 				09AB9BE829F8005B008A7BC3 /* Assets.xcassets in Resources */,
+				099B99732A03C4B400BE6334 /* mocked-journey.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +520,7 @@
 				099B99622A02B17B00BE6334 /* Location+Errors.swift in Sources */,
 				099B99712A02FDDE00BE6334 /* LocationLog+DI.swift in Sources */,
 				099255822A025964001B5F05 /* JourneyStorage+Protocol.swift in Sources */,
+				099B99752A03C5DB00BE6334 /* JourneyStorage+Mock.swift in Sources */,
 				09C6C13329FFE3BE00DA6436 /* AccessToken.swift in Sources */,
 				09C6C14F29FFF38D00DA6436 /* InjectedValues.swift in Sources */,
 				09C6C1692A00789900DA6436 /* Flickr+DI.swift in Sources */,
@@ -524,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				099B99762A03C5DB00BE6334 /* JourneyStorage+Mock.swift in Sources */,
 				09AB9BF529F8005B008A7BC3 /* ios_geofencing_demoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
