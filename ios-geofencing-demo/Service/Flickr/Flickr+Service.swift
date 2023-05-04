@@ -27,11 +27,11 @@ public extension Flickr {
                            fetchedImages.compactMap { $0 }
                        }
                        .eraseToAnyPublisher()
-            // MARK: - Private
-            private func flickrPhotosSearch(latitude: Double, longitude: Double) -> AnyPublisher<Flickr.PagedPhotosResponse, Error> {
-                return URLSession.shared.publisher(for: .flickrPhotosSearch(latitude: latitude, longitude: longitude))
-                    .eraseToAnyPublisher()
-            }
+        }
+        // MARK: - Private
+        public func flickrPhotosSearch(latitude: Double, longitude: Double) -> AnyPublisher<Flickr.PagedPhotosResponse, Error> {
+            return URLSession.shared.publisher(for: .flickrPhotosSearch(latitude: latitude, longitude: longitude))
+                .eraseToAnyPublisher()
         }
     }
 }
