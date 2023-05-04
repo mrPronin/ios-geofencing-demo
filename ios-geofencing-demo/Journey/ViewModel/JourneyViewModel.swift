@@ -24,10 +24,26 @@ public extension Journey {
         @Published public var alert: AlertData?
         @Published public var logs: String = ""
         public func loadLogs() {
-//            logs = locationLogService.logs.joined(separator: "\n\n")
+            //            logs = locationLogService.logs.joined(separator: "\n\n")
             logs = journeyStorageService.locations.enumerated().map { "#\($0.offset)\nlat: \($0.element.coordinate.latitude)\nlon: \($0.element.coordinate.longitude)" }.joined(separator: "\n\n")
         }
         @Published public var distance: Double = 0
+        
+        @Published public var images: [Flickr.Image] = []
+        public func loadImages() {
+            let locations = journeyStorageService.locations.map { (latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude) }
+            guard !locations.isEmpty else {
+                images = []
+                return
+            }
+            flickrService.imagesFor(locations: locations)
+                .receive(on: DispatchQueue.main)
+                .catch { [weak self] (error) -> Just<[Flickr.Image]> in
+                    self?.alert = AlertData(title: "Error", message: error.localizedDescription)
+                    return Just([])
+                }
+                .assign(to: &$images)
+        }
         
         // MARK: - Init
         init() {
@@ -49,7 +65,7 @@ public extension Journey {
                     self?.loadLogs()
                 }
                 .store(in: &subscriptions)
-
+            
             locationService.didFailWithError
                 .receive(on: DispatchQueue.main)
                 .sink { [weak self] error in
@@ -57,11 +73,13 @@ public extension Journey {
                 }
                 .store(in: &subscriptions)
             
-//            flickrService.flickrPhotosSearch(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-//                .sink(receiveCompletion: { print ("completion: \($0)") }, receiveValue: { model in
-//                    print(model.photos.first)
-//                })
-//                .store(in: &subscriptions)
+            // debug
+            $images
+                .sink { images in
+                    print("images: \(images.map(\.url).compactMap { $0 }.enumerated().map { "#\($0.offset) url: \($0.element)" })")
+                }
+                .store(in: &subscriptions)
+            // debug
         }
         
         // MARK: - Private
@@ -72,14 +90,10 @@ public extension Journey {
             
             logs = ""
             locationLogService.removeLogs()
-            
-//            locationService.startUpdatingLocation()
         }
         
         private func disable() {
             locationService.stopMonitoring()
-            
-//            locationService.stopUpdatingLocation()
         }
         
         @Injected(\.flickrService) private var flickrService: FlickrService

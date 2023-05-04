@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 public protocol FlickrService {
-    func flickrPhotosSearch(latitude: Double, longitude: Double) -> AnyPublisher<Flickr.PagedPhotosResponse, Error>
+    func imagesFor(locations: [(latitude: Double, longitude: Double)]) -> AnyPublisher<[Flickr.Image], Error>
 }

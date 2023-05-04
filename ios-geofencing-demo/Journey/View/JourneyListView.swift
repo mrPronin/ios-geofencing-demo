@@ -19,6 +19,7 @@ public extension Journey {
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
                     Text("Tap Start button to begin your journey")
+                        .padding(.top)
                     Text("Distance: \(viewModel.distance)")
                         .padding()
                     ScrollView {
@@ -44,6 +45,7 @@ public extension Journey {
             .onChange(of: scenePhase) { newPhase in
                 guard newPhase == .active else { return }
                 viewModel.loadLogs()
+                viewModel.loadImages()
             }
         }
     }
