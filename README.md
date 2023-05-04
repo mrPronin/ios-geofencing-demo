@@ -50,7 +50,7 @@
 - [x] clean-up debug and log
 - [x] create UI for images list
 - [x] create journey view model protocol
-- [ ] unit-tests
+- [x] unit-tests
     - [x] implement unit-tests for journey view model
         - [x] create mocked Flickr response and Fllickr mocked service
         - [x] create mocked location service
