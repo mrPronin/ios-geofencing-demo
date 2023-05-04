@@ -1,4 +1,11 @@
 # iOS geofencing demo
+## Description
+- language: Swift
+- architecture: MVVM + Combine
+- UI: SwiftUI
+- localization & internalization (currently suppotts 'en' and 'de'), example Network+Errors.swift
+- zero external dependencies
+- property wrappers dependency injection for services
 ## User stories
 - **User story 1.** As a user of the application, I want to be able to start a journey by clicking the "Start" button, and then end the journey by clicking the "Stop" button. It should be one button, but the title should change depending on the mode.
 - **User story 2.** As a user of the application, I have to receive a permission request to use location.
