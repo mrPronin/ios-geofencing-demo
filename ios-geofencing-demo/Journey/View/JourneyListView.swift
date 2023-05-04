@@ -9,17 +9,50 @@ import SwiftUI
 
 public extension Journey {
     struct ListView: View {
-        @StateObject var viewModel = ViewModel()
+        @StateObject var viewModel: ViewModel
         @Environment(\.scenePhase) var scenePhase
         
+        public init(viewModel: ViewModel) {
+            self._viewModel = StateObject(wrappedValue: viewModel)
+        }
+        
         public var body: some View {
-            NavigationStack {
-                VStack {
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                        .foregroundColor(.accentColor)
-                    Text("Tap Start button to begin your journey")
-                        .padding(.top)
+            NavigationView {
+                NavigationStack {
+                    if !viewModel.journeyExist {
+                        VStack {
+                            Image(systemName: "globe")
+                                .imageScale(.large)
+                                .foregroundColor(.accentColor)
+                            Text("Tap Start button to begin your journey")
+                                .padding(.top)
+                        }
+                        .padding()
+                    } else {
+                        Text("Your journey")
+                            .font(.headline)
+                        ZStack {
+                            List(viewModel.images) { image in
+                                if let url = image.url {
+                                    AsyncImage(url: url) { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                    } placeholder: {
+                                        ProgressView()
+                                    }
+
+                                } else {
+                                    Image(systemName: "photo.artframe")
+                                        .imageScale(.large)
+                                        .foregroundColor(.accentColor)
+                                }
+                            }
+                            if viewModel.isLoading {
+                                ProgressView()
+                            }
+                        }
+                    }
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -28,14 +61,16 @@ public extension Journey {
                         }
                     }
                 }
-                .padding()
-            }
-            .alert(item: $viewModel.alert) { alertData in
-                Alert(title: Text(alertData.title), message: Text(alertData.message), dismissButton: .default(Text("OK")))
-            }
-            .onChange(of: scenePhase) { newPhase in
-                guard newPhase == .active else { return }
-                viewModel.loadImages()
+                .alert(item: $viewModel.alert) { alertData in
+                    Alert(title: Text(alertData.title), message: Text(alertData.message), dismissButton: .default(Text("OK")))
+                }
+                .onAppear {
+                    viewModel.loadImages()
+                }
+                .onChange(of: scenePhase) { newPhase in
+                    guard newPhase == .active else { return }
+                    viewModel.loadImages()
+                }
             }
         }
     }
@@ -43,6 +78,6 @@ public extension Journey {
 
 struct JourneyView_Previews: PreviewProvider {
     static var previews: some View {
-        Journey.ListView()
+        Journey.ListView(viewModel: Journey.ViewModel())
     }
 }

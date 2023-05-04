@@ -11,9 +11,11 @@ import SwiftUI
 struct GeofencingDemoApp: App {
     @UIApplicationDelegateAdaptor(GeofencingDemoAppDelegate.self) var appDelegate
     
+    let journeyViewModel = Journey.ViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            Journey.ListView()
+            Journey.ListView(viewModel: journeyViewModel)
         }
     }
 }

@@ -23,28 +23,36 @@ public extension Journey {
         }
         @Published public var alert: AlertData?
         
-        @Published public var images: [Flickr.Image] = []
+        @Published private(set) public var images: [Flickr.Image] = []
         public func loadImages() {
             let locations = journeyStorageService.locations.map { (latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude) }
             guard !locations.isEmpty else {
                 images = []
                 return
             }
+            isLoading = true
             flickrService.imagesFor(locations: locations)
                 .receive(on: DispatchQueue.main)
+                .handleEvents(receiveCompletion: { [weak self] _ in
+                    self?.isLoading = false
+                })
                 .catch { [weak self] (error) -> Just<[Flickr.Image]> in
                     self?.alert = AlertData(title: "Error", message: error.localizedDescription)
                     return Just([])
                 }
                 .assign(to: &$images)
         }
+        @Published private(set) public var isLoading = false
         
+        @Published private(set) public var journeyExist: Bool = false
+
         // MARK: - Init
         init() {
             locationService.didFailWithError
                 .receive(on: DispatchQueue.main)
                 .map { AlertData(title: "Error", message: $0.localizedDescription) }
                 .assign(to: &$alert)
+            journeyExist = !journeyStorageService.locations.isEmpty
         }
         
         // MARK: - Private
