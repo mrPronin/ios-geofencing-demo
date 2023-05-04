@@ -20,7 +20,7 @@ class GeofencingDemoSceneDelegate: NSObject, UIWindowSceneDelegate {
         locationService.didExitRegion
             .sink { [weak self] region in
                 if let circularRegion = region as? CLCircularRegion {
-                    self?.locationLogService.add(logItem: "didExitRegion lat:\n\(circularRegion.center.latitude)\nlon: \(circularRegion.center.longitude)")
+                    self?.locationLogService.add(logItem: "didExitRegion \(Date()) lat: \(circularRegion.center.latitude) lon: \(circularRegion.center.longitude)")
                 }
                 print("region: \(region.identifier)")
                 self?.locationService.stopMonitoring()
@@ -29,13 +29,30 @@ class GeofencingDemoSceneDelegate: NSObject, UIWindowSceneDelegate {
             .store(in: &subscriptions)
         
         locationService.didUpdateLocation
-            .map { Journey.Location(coordinate: $0.coordinate) }
             .sink { [weak self] location in
-                guard location.coordinate != self?.journeyStorageService.locations.last?.coordinate else { return }
-                self?.locationLogService.add(logItem: "didUpdateLocation lat:\n\(location.coordinate.latitude)\nlon: \(location.coordinate.longitude)")
+                
                 print("coordinate: \(location.coordinate)")
-                self?.journeyStorageService.add(location: location)
-                self?.locationService.startMonitoring(for: location.region)
+                
+                if let lastJourneyLocation = self?.journeyStorageService.locations.last {
+                    let lastLocation = CLLocation(
+                        latitude: lastJourneyLocation.coordinate.latitude,
+                        longitude: lastJourneyLocation.coordinate.longitude
+                    )
+                    let distance = location.distance(from: lastLocation)
+                    
+                    if distance < CLLocationDistance(Constants.trackingRadius) {
+                        return
+                    }
+                    if location.coordinate == lastJourneyLocation.coordinate {
+                        return
+                    }
+                }
+
+                self?.locationLogService.add(logItem: "didUpdateLocation \(Date()) lat: \(location.coordinate.latitude) lon: \(location.coordinate.longitude)")
+                
+                let journeyLocation = Journey.Location(coordinate: location.coordinate)
+                self?.journeyStorageService.add(location: journeyLocation)
+                self?.locationService.startMonitoring(for: journeyLocation.region)
             }
             .store(in: &subscriptions)
     }

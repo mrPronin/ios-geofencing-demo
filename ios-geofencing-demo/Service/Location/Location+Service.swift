@@ -48,6 +48,7 @@ public extension Location {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestAlwaysAuthorization()
             locationManager.allowsBackgroundLocationUpdates = true
+            locationManager.showsBackgroundLocationIndicator = true
             
             super.init()
             locationManager.delegate = self

@@ -25,22 +25,21 @@ public extension Journey {
         @Published public var logs: String = ""
         public func loadLogs() {
             logs = locationLogService.logs.joined(separator: "\n\n")
-//            journeyStorageService.locations.map({ "lat: \($0.coordinate.latitude) lon: \($0.coordinate.longitude)" }).joined(separator: "\n\n")
         }
+        @Published public var distance: Double = 0
         
         // MARK: - Init
         init() {
-            locationService.didFailWithError
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] error in
-                    self?.alert = AlertData(title: "Error", message: error.localizedDescription)
-                }
-                .store(in: &subscriptions)
-
             locationService.didUpdateLocation
-                .map { Journey.Location(coordinate: $0.coordinate) }
                 .sink { [weak self] location in
                     self?.loadLogs()
+                    
+                    if let firstJourneyLocation = self?.journeyStorageService.locations.first {
+                        let firstLocation = CLLocation(latitude: firstJourneyLocation.coordinate.latitude, longitude: firstJourneyLocation.coordinate.longitude)
+                        let distance = location.distance(from: firstLocation)
+                        
+                        self?.distance = distance
+                    }
                 }
                 .store(in: &subscriptions)
             
@@ -50,6 +49,13 @@ public extension Journey {
                 }
                 .store(in: &subscriptions)
 
+            locationService.didFailWithError
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] error in
+                    self?.alert = AlertData(title: "Error", message: error.localizedDescription)
+                }
+                .store(in: &subscriptions)
+            
 //            flickrService.flickrPhotosSearch(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
 //                .sink(receiveCompletion: { print ("completion: \($0)") }, receiveValue: { model in
 //                    print(model.photos.first)
@@ -59,15 +65,20 @@ public extension Journey {
         
         // MARK: - Private
         private func enable() {
-            logs = ""
             locationService.stopMonitoring()
             journeyStorageService.removeLocations()
             locationService.requestLocation()
+            
+            logs = ""
             locationLogService.removeLogs()
+            
+//            locationService.startUpdatingLocation()
         }
         
         private func disable() {
             locationService.stopMonitoring()
+            
+//            locationService.stopUpdatingLocation()
         }
         
         @Injected(\.flickrService) private var flickrService: FlickrService

@@ -19,12 +19,13 @@ public extension Journey {
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
                     Text("Tap Start button to begin your journey")
+                    Text("Distance: \(viewModel.distance)")
                         .padding()
                     ScrollView {
                         Text(viewModel.logs)
                             .lineLimit(nil)
                             .multilineTextAlignment(.leading)
-                            
+                            .frame(maxWidth: .infinity)
                     }
                     .padding()
                 }
