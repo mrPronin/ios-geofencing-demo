@@ -10,7 +10,8 @@ import CoreLocation
 import Combine
 
 public extension Location {
-    class Service: NSObject, ObservableObject, LocationService {
+    class Service: NSObject, LocationService {
+        // MARK: - Public
         public var didUpdateLocation: AnyPublisher<CLLocation, Never> { _didUpdateLocation.eraseToAnyPublisher() }
         public var didFailWithError: AnyPublisher<Error, Never> { _didFailWithError.eraseToAnyPublisher() }
         public var locationManagerDidChangeAuthorization: AnyPublisher<CLLocationManager, Never> { _locationManagerDidChangeAuthorization.eraseToAnyPublisher() }
