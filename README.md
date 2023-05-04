@@ -49,6 +49,7 @@
         - [x] create mocked location service
         - [x] unit-test journey view model: testInitialState
         - [x] unit-test journey view model: testStartStopLocationTracking_Start, testStartStopLocationTracking_Stop
+        - [x] unit-test journey view model: testLoadImages and testLoadImagesWithError
     - [ ] network
     - [ ] localization service
     - [ ] flickr service

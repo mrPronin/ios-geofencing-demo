@@ -28,11 +28,13 @@
 		099B99802A03F63C00BE6334 /* flickr-mocked-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 099B997E2A03F63C00BE6334 /* flickr-mocked-response.json */; };
 		099B99872A03FCE500BE6334 /* JourneyViewModel+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99862A03FCE500BE6334 /* JourneyViewModel+Test.swift */; };
 		099B998A2A0401A000BE6334 /* Location+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99812A03F9D300BE6334 /* Location+Mock.swift */; };
+		099B998C2A040C6E00BE6334 /* XCTestCase+await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B998B2A040C6E00BE6334 /* XCTestCase+await.swift */; };
+		099B99952A040F7C00BE6334 /* JourneyLocation+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99942A040F7C00BE6334 /* JourneyLocation+Mock.swift */; };
+		099B99982A04156C00BE6334 /* Flickr+Image+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B99972A04156C00BE6334 /* Flickr+Image+Mock.swift */; };
 		09AB9BE429F8005A008A7BC3 /* GeofencingDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */; };
 		09AB9BE629F8005A008A7BC3 /* JourneyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */; };
 		09AB9BE829F8005B008A7BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB9BE729F8005B008A7BC3 /* Assets.xcassets */; };
 		09AB9BEB29F8005B008A7BC3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AB9BEA29F8005B008A7BC3 /* Preview Assets.xcassets */; };
-		09AB9BF529F8005B008A7BC3 /* ios_geofencing_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9BF429F8005B008A7BC3 /* ios_geofencing_demoTests.swift */; };
 		09AB9C0E29F801C4008A7BC3 /* GeofencingDemoAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9C0D29F801C4008A7BC3 /* GeofencingDemoAppDelegate.swift */; };
 		09AB9C1029F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9C0F29F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift */; };
 		09AB9C1429F949A9008A7BC3 /* JourneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AB9C1329F949A9008A7BC3 /* JourneyViewModel.swift */; };
@@ -99,13 +101,15 @@
 		099B997E2A03F63C00BE6334 /* flickr-mocked-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "flickr-mocked-response.json"; sourceTree = "<group>"; };
 		099B99812A03F9D300BE6334 /* Location+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Mock.swift"; sourceTree = "<group>"; };
 		099B99862A03FCE500BE6334 /* JourneyViewModel+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JourneyViewModel+Test.swift"; sourceTree = "<group>"; };
+		099B998B2A040C6E00BE6334 /* XCTestCase+await.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+await.swift"; sourceTree = "<group>"; };
+		099B99942A040F7C00BE6334 /* JourneyLocation+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JourneyLocation+Mock.swift"; sourceTree = "<group>"; };
+		099B99972A04156C00BE6334 /* Flickr+Image+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flickr+Image+Mock.swift"; sourceTree = "<group>"; };
 		09AB9BE029F8005A008A7BC3 /* ios-geofencing-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-geofencing-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AB9BE329F8005A008A7BC3 /* GeofencingDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoApp.swift; sourceTree = "<group>"; };
 		09AB9BE529F8005A008A7BC3 /* JourneyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyListView.swift; sourceTree = "<group>"; };
 		09AB9BE729F8005B008A7BC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09AB9BEA29F8005B008A7BC3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09AB9BF029F8005B008A7BC3 /* ios-geofencing-demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-geofencing-demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		09AB9BF429F8005B008A7BC3 /* ios_geofencing_demoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_geofencing_demoTests.swift; sourceTree = "<group>"; };
 		09AB9C0D29F801C4008A7BC3 /* GeofencingDemoAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoAppDelegate.swift; sourceTree = "<group>"; };
 		09AB9C0F29F80692008A7BC3 /* GeofencingDemoSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingDemoSceneDelegate.swift; sourceTree = "<group>"; };
 		09AB9C1329F949A9008A7BC3 /* JourneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyViewModel.swift; sourceTree = "<group>"; };
@@ -165,7 +169,6 @@
 				099255812A025964001B5F05 /* JourneyStorage+Protocol.swift */,
 				099255862A025DFA001B5F05 /* JourneyStorage+Defines.swift */,
 				099255832A025AAB001B5F05 /* JourneyStorage+Service.swift */,
-				099B99742A03C5DB00BE6334 /* JourneyStorage+Mock.swift */,
 				099255882A0260A7001B5F05 /* JourneyStorage+DI.swift */,
 			);
 			path = Service;
@@ -177,7 +180,6 @@
 				0992558B2A02918A001B5F05 /* Location.swift */,
 				0992558D2A0292A7001B5F05 /* Location+Protocol.swift */,
 				0992558F2A029DE1001B5F05 /* Location+Service.swift */,
-				099B99812A03F9D300BE6334 /* Location+Mock.swift */,
 				099B99612A02B17B00BE6334 /* Location+Errors.swift */,
 				099255912A02A633001B5F05 /* Location+DI.swift */,
 			);
@@ -207,6 +209,8 @@
 		099B99842A03FCBB00BE6334 /* Journey */ = {
 			isa = PBXGroup;
 			children = (
+				099B99922A040F3B00BE6334 /* Service */,
+				099B99932A040F5C00BE6334 /* Model */,
 				099B99852A03FCC600BE6334 /* ViewModel */,
 			);
 			path = Journey;
@@ -218,6 +222,63 @@
 				099B99862A03FCE500BE6334 /* JourneyViewModel+Test.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		099B998D2A040D8900BE6334 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				099B998E2A040D9900BE6334 /* Location */,
+				099B998F2A040DC600BE6334 /* Flickr */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		099B998E2A040D9900BE6334 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				099B99812A03F9D300BE6334 /* Location+Mock.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		099B998F2A040DC600BE6334 /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				099B99772A03F38700BE6334 /* Flickr+Mock.swift */,
+				099B99962A04155600BE6334 /* Model */,
+			);
+			path = Flickr;
+			sourceTree = "<group>";
+		};
+		099B99912A040E3A00BE6334 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		099B99922A040F3B00BE6334 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				099B99742A03C5DB00BE6334 /* JourneyStorage+Mock.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		099B99932A040F5C00BE6334 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				099B99942A040F7C00BE6334 /* JourneyLocation+Mock.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		099B99962A04155600BE6334 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				099B99972A04156C00BE6334 /* Flickr+Image+Mock.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		09AB9BD729F8005A008A7BC3 = {
@@ -270,8 +331,10 @@
 		09AB9BF329F8005B008A7BC3 /* ios-geofencing-demoTests */ = {
 			isa = PBXGroup;
 			children = (
+				099B998B2A040C6E00BE6334 /* XCTestCase+await.swift */,
+				099B998D2A040D8900BE6334 /* Service */,
 				099B99842A03FCBB00BE6334 /* Journey */,
-				09AB9BF429F8005B008A7BC3 /* ios_geofencing_demoTests.swift */,
+				099B99912A040E3A00BE6334 /* Resourses */,
 			);
 			path = "ios-geofencing-demoTests";
 			sourceTree = "<group>";
@@ -386,7 +449,6 @@
 				09C6C1642A006D1500DA6436 /* Flickr+Protocol.swift */,
 				09C6C15A2A00616500DA6436 /* Endpoint+flickrPhotosSearch.swift */,
 				09C6C1662A00712700DA6436 /* Flickr+Service.swift */,
-				099B99772A03F38700BE6334 /* Flickr+Mock.swift */,
 				09C6C1682A00789900DA6436 /* Flickr+DI.swift */,
 				09C6C1612A006CD300DA6436 /* Model */,
 			);
@@ -560,11 +622,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				099B99982A04156C00BE6334 /* Flickr+Image+Mock.swift in Sources */,
 				099B998A2A0401A000BE6334 /* Location+Mock.swift in Sources */,
+				099B998C2A040C6E00BE6334 /* XCTestCase+await.swift in Sources */,
 				099B99872A03FCE500BE6334 /* JourneyViewModel+Test.swift in Sources */,
 				099B99762A03C5DB00BE6334 /* JourneyStorage+Mock.swift in Sources */,
-				09AB9BF529F8005B008A7BC3 /* ios_geofencing_demoTests.swift in Sources */,
 				099B99792A03F38700BE6334 /* Flickr+Mock.swift in Sources */,
+				099B99952A040F7C00BE6334 /* JourneyLocation+Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
