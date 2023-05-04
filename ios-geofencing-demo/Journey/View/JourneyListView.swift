@@ -20,15 +20,6 @@ public extension Journey {
                         .foregroundColor(.accentColor)
                     Text("Tap Start button to begin your journey")
                         .padding(.top)
-                    Text("Distance: \(viewModel.distance)")
-                        .padding()
-                    ScrollView {
-                        Text(viewModel.logs)
-                            .lineLimit(nil)
-                            .multilineTextAlignment(.leading)
-                            .frame(maxWidth: .infinity)
-                    }
-                    .padding()
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -44,7 +35,6 @@ public extension Journey {
             }
             .onChange(of: scenePhase) { newPhase in
                 guard newPhase == .active else { return }
-                viewModel.loadLogs()
                 viewModel.loadImages()
             }
         }

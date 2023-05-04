@@ -40,6 +40,7 @@
 - [x] debug didExitRegion on device, small improvements
 - [x] create mocked JourneyStorage and feed it with mocked journey json
 - [x] fetch images for location list
+- [x] clean-up debug and log
 - [ ] create UI for images list
 - [ ] create journey view model protocol
 - [ ] unit-tests
