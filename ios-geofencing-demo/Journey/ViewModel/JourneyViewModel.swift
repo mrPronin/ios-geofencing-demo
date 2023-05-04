@@ -75,8 +75,8 @@ public extension Journey {
         
         // MARK: - Private
         private func enable() {
-            locationService.stopMonitoring()
             journeyStorageService.removeLocations()
+            locationService.stopMonitoring()
             locationService.requestLocation()
             
             images = []

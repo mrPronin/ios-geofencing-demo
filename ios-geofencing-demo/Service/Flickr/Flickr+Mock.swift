@@ -10,7 +10,7 @@ import Combine
 @testable import ios_geofencing_demo
 
 public extension Flickr {
-    struct ServiceMock: FlickrService {
+    class ServiceMock: FlickrService {
         // MARK: - Public
         public func imagesFor(locations: [(latitude: Double, longitude: Double)]) -> AnyPublisher<[Flickr.Image], Error> {
             let empty = Just<[Flickr.Image]>([])

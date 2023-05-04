@@ -11,17 +11,23 @@ import Combine
 @testable import ios_geofencing_demo
 
 public extension Location {
-    struct ServiceMock: LocationService {
+    class ServiceMock: LocationService {
         
         var error: Error?
         var location: CLLocation?
         var region: CLRegion?
+        var stopMonitoringCalled: Bool = false
+        var requestLocationCalled: Bool = false
         
-        public func requestLocation() {}
+        public func requestLocation() {
+            requestLocationCalled = true
+        }
         
         public func startMonitoring(for region: CLRegion) {}
         
-        public func stopMonitoring() {}
+        public func stopMonitoring() {
+            stopMonitoringCalled = true
+        }
         
         public var didUpdateLocation: AnyPublisher<CLLocation, Never> {
             if let location {

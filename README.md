@@ -46,7 +46,9 @@
 - [ ] unit-tests
     - [ ] implement unit-tests for journey view model
         - [x] create mocked Flickr response and Fllickr mocked service
-        - [ ] create mocked location service
+        - [x] create mocked location service
+        - [x] unit-test journey view model: testInitialState
+        - [x] unit-test journey view model: testStartStopLocationTracking_Start, testStartStopLocationTracking_Stop
     - [ ] network
     - [ ] localization service
     - [ ] flickr service
