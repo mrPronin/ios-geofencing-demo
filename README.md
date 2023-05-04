@@ -44,4 +44,14 @@
 - [x] create UI for images list
 - [x] create journey view model protocol
 - [ ] unit-tests
+    - [ ] implement unit-tests for journey view model
+        - [x] create mocked Flickr response and Fllickr mocked service
+        - [ ] create mocked location service
+    - [ ] network
+    - [ ] localization service
+    - [ ] flickr service
+    - [ ] location service
+- [ ] mock (if possible) CLLocationManager in LocationService
+- [ ] use StorageService instead of StorageServiceMock
+- [ ] provide app localization
 - [ ] refactor to TCA

@@ -8,7 +8,7 @@
 import Foundation
 
 private struct FlickrProviderKey: InjectionKey {
-    static var currentValue: FlickrService = Flickr.Service()
+    static var currentValue: FlickrService = Flickr.ServiceMock()
 }
 
 extension InjectedValues {

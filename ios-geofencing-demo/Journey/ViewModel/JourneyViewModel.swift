@@ -51,6 +51,9 @@ public extension Journey {
                     self?.alert = AlertData(title: "Error", message: error.localizedDescription)
                     return Just([])
                 }
+//                .handleEvents(receiveOutput: { images in
+//                    print(images)
+//                })
                 .assign(to: &$images)
         }
         @Published private(set) public var isLoading = false
@@ -79,6 +82,7 @@ public extension Journey {
             locationService.stopMonitoring()
         }
         
+        // MARK: - Dependency injection
         @Injected(\.flickrService) private var flickrService: FlickrService
         @Injected(\.journeyStorageProvider) private var journeyStorageService: JourneyStorageService
         @Injected(\.locationProvider) private var locationService: LocationService

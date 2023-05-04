@@ -64,9 +64,9 @@ public extension Journey {
                 .alert(item: $viewModel.alert) { alertData in
                     Alert(title: Text(alertData.title), message: Text(alertData.message), dismissButton: .default(Text("OK")))
                 }
-                .onAppear {
-                    viewModel.loadImages()
-                }
+//                .onAppear {
+//                    viewModel.loadImages()
+//                }
                 .onChange(of: scenePhase) { newPhase in
                     guard newPhase == .active else { return }
                     viewModel.loadImages()
