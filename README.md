@@ -3,6 +3,7 @@
 - language: Swift
 - architecture: MVVM + Combine
 - UI: SwiftUI
+- location updates in the background, geofencing
 - localization & internalization (currently suppotts 'en' and 'de'), example Network+Errors.swift
 - zero external dependencies
 - property wrappers dependency injection for services
