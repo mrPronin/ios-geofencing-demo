@@ -14,7 +14,8 @@
 
 ## ENVIRONMENT
 
-
+For the project to work correctly, you need to set the environment variable FLICKR_API_KEY.
+![Screenshot 2023-05-07 at 15 02 58](https://user-images.githubusercontent.com/3205852/236679245-b7d5525a-23c9-449e-a9e5-b99ade1ae4a2.png)
 
 ## TODO
 - [x] define git repository and initial README, .gitignore etc.
