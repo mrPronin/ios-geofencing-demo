@@ -12,6 +12,10 @@
 - **User story 3.** As a user of the app, every time I open the app, I have to see a list of pictures from Flickr that are tied to the user's location during the journey every 100 meters. New pictures should be at the top. Whenever the user takes a look at their phone, they see the most recent picture and can scroll through a stream of pictures that shows where the user has been.
 - **User story 4.** As a user of the app, I should be able to use the travel mode for at least a two-hour walk.
 
+## ENVIRONMENT
+
+
+
 ## TODO
 - [x] define git repository and initial README, .gitignore etc.
 - [x] make initial project setup with SwiftUI interface and UIKit AppDelegate
@@ -60,6 +64,10 @@
     - [x] unit-test endpoint for network
     - [ ] unit-test flickr service (?)
     - [ ] unit-test location service, mock CLLocationManager in LocationService
-- [ ] implement full app localization
+- [ ] fix: use environment variables for sensitive data instead of git
+- [ ] fix: improve (?) the accuracy and relevance of images based on geo-location
+- [ ] fix: remove images duplication
+- [ ] feat: implement background fetch for images
 - [ ] add SwiftLint
+- [ ] (optional) implement full app localization
 - [ ] refactor to TCA

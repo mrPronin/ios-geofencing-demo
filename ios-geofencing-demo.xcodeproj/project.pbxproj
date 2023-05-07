@@ -69,6 +69,7 @@
 		09C6C1652A006D1500DA6436 /* Flickr+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C6C1642A006D1500DA6436 /* Flickr+Protocol.swift */; };
 		09C6C1672A00712700DA6436 /* Flickr+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C6C1662A00712700DA6436 /* Flickr+Service.swift */; };
 		09C6C1692A00789900DA6436 /* Flickr+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C6C1682A00789900DA6436 /* Flickr+DI.swift */; };
+		09EE5B5A2A07D6480003ECA1 /* ProjectEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE5B592A07D6480003ECA1 /* ProjectEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		09C6C1642A006D1500DA6436 /* Flickr+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flickr+Protocol.swift"; sourceTree = "<group>"; };
 		09C6C1662A00712700DA6436 /* Flickr+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flickr+Service.swift"; sourceTree = "<group>"; };
 		09C6C1682A00789900DA6436 /* Flickr+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flickr+DI.swift"; sourceTree = "<group>"; };
+		09EE5B592A07D6480003ECA1 /* ProjectEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,6 +397,7 @@
 		09C6C12B29FFE2F000DA6436 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				09EE5B582A07D6360003ECA1 /* Environment */,
 				099B99672A02FAB100BE6334 /* LocationLog */,
 				0992558A2A029183001B5F05 /* Location */,
 				09C6C1602A006CAA00DA6436 /* Flickr */,
@@ -479,6 +482,14 @@
 				09C6C15E2A0065EE00DA6436 /* Flickr+PagedPhotosResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		09EE5B582A07D6360003ECA1 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				09EE5B592A07D6480003ECA1 /* ProjectEnvironment.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,6 +597,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09C6C14D29FFF26A00DA6436 /* Localization+Service.swift in Sources */,
+				09EE5B5A2A07D6480003ECA1 /* ProjectEnvironment.swift in Sources */,
 				099B996D2A02FC4A00BE6334 /* LocationLog+Defines.swift in Sources */,
 				09C6C13729FFE43200DA6436 /* Network+Errors.swift in Sources */,
 				09C6C14729FFF16000DA6436 /* InjectionKey.swift in Sources */,

@@ -11,7 +11,7 @@ extension Endpoint where Kind == EndpointKinds.Public, Response == Flickr.PagedP
     static func flickrPhotosSearch(latitude: Double, longitude: Double) -> Self {
         let parameters = [
             "method" : "flickr.photos.search",
-            "api_key" : Constants.flickrAPIKey,
+            "api_key" : ProjectEnvironment.string(forKey: .flickrAPIKey),
             "lat" : String(latitude),
             "lon" : String(longitude),
             "format" : "json",

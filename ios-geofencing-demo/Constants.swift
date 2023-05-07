@@ -12,5 +12,4 @@ public enum Constants {
     public static let baseURL = "flickr.com"
     // TODO: define test instance url for testing env
     public static let baseURLTest = "flickr.com"
-    public static let flickrAPIKey = "ce33a87084ba80fef3054149f000f641"
 }
