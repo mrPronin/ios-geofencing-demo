@@ -15,7 +15,7 @@
 ## ENVIRONMENT
 
 For the project to work correctly, you need to set the environment variable FLICKR_API_KEY.
-![Screenshot 2023-05-07 at 15 02 58](https://user-images.githubusercontent.com/3205852/236679245-b7d5525a-23c9-449e-a9e5-b99ade1ae4a2.png)
+![Edit scheme to setup environment variable](https://user-images.githubusercontent.com/3205852/236679245-b7d5525a-23c9-449e-a9e5-b99ade1ae4a2.png)
 
 ## TODO
 - [x] define git repository and initial README, .gitignore etc.
@@ -65,7 +65,7 @@ For the project to work correctly, you need to set the environment variable FLIC
     - [x] unit-test endpoint for network
     - [ ] unit-test flickr service (?)
     - [ ] unit-test location service, mock CLLocationManager in LocationService
-- [ ] fix: use environment variables for sensitive data instead of git
+- [x] feat: use environment variables for sensitive data instead of git
 - [ ] fix: improve (?) the accuracy and relevance of images based on geo-location
 - [ ] fix: remove images duplication
 - [ ] feat: implement background fetch for images
